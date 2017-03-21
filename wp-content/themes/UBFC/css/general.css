@@ -1,0 +1,846 @@
+/* ========================= Police d'écriture =========================*/
+
+@font-face {
+    font-family: biko;
+    src: url('../fonts/Biko_Regular.otf'),
+    url('../fonts/Biko_Bold.otf'),
+    url('../fonts/Biko_Black.otf');
+}
+
+h2,h3,h4,h5,h6 {
+    font-family: Biko, serif;
+}
+
+p,a {
+    font-family: Calibri, sans-serif;
+    color: #626A71;
+}
+
+h1 {
+    font-size: 64px;
+    font-family: Biko_Black, sans-serif;
+}
+
+h2 {
+    font-size: 34px;
+    margin-top: 0;
+}
+
+h3 {
+    /*pour les images cliquables => voir fichier readme*/
+    font-size: 24px;
+    position: absolute;
+    width:100%;
+    margin: 0;
+    line-height: 24px;
+    top: calc(50% - 24px * 0.5);
+}
+
+h4 {
+    font-size: 24px;
+    margin: 20px 0 5px;
+}
+
+.liste p {
+    margin: 5px 0;
+}
+
+.liste a {
+    display: block;
+    margin-top: 10px;
+}
+
+p {
+     font-size: 18px;
+     font-weight: lighter;
+ }
+
+.lg-top {
+    border-top: 2px solid #626A71;
+    width: 25%;
+    padding-top: 3px;
+}
+
+.centre {
+    text-align: center;
+}
+
+.savoir-plus,
+.gras,
+.result > * {
+     font-weight: bold;
+ }
+
+@media screen and (max-width:640px) {
+    h1 {font-size: 36px;}
+    h2 {font-size: 25px;}
+    h3 {font-size: 20px;}
+    p{font-size: 15px;}
+    .centre {
+        text-align: left;
+    }
+}
+
+/* ========================= Général =========================*/
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+                    /*============ Détails ===========*/
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+span {
+    margin-right: 0.5em;
+}
+
+
+h2.blanc {
+    position: relative;
+}
+
+h2.blanc::after {
+    content: '';
+    position: absolute;
+    top: -0.2em;
+    left: 0;
+    border-top: 2px solid white;
+    width: 33%;
+    padding-top: 3px;
+}
+
+
+                    /*========== Formulaires =========*/
+form {
+    padding-bottom: 50px;
+}
+
+input {
+    padding: 1em;
+    margin-right: 1em;
+    border-bottom: 3px solid #078ACC;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+}
+
+#formation {
+    width: calc(50% - 1.5em);
+}
+
+#lieu {
+    width: calc(30% - 1.5em);
+}
+
+#recherche {
+    width: calc(20% - 1.5em);
+    font-family: Biko, sans-serif;
+    background-color: #078acc;
+    border-bottom: 5px solid #056AB0;
+}
+
+#recherche:hover {
+    border-bottom: none;
+    background-color: #056AB0;
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 640px){
+    input {
+        margin-top: 1em;
+    }
+    #formation {
+        width: 100%;
+    }
+
+    #lieu {
+        width: 100%;
+    }
+
+    #recherche {
+        width: 40%;
+        font-family: Biko, sans-serif;
+        margin-right:30%;
+        margin-left:30%;
+        margin-top:1em;
+        background-color: #078acc;
+        border-bottom: 5px solid #056AB0;
+    }
+    #recherche:hover{
+        width: 40%;
+        font-family: Biko, sans-serif;
+        margin-right:30%;
+        margin-left:30%;
+        margin-top:1em;
+        background-color: #078acc;
+        border-bottom: 5px solid #056AB0;
+    }
+}
+
+                    /*========= Mise en page =========*/
+
+.img-background{
+    width: 100%;
+}
+
+.principale {
+    width: 960px;
+    margin: 30px auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    z-index:3;
+}
+
+.moitie{
+    width: 50%;
+}
+
+@media screen and (max-width: 960px){
+    .principale{width: 100%;
+                padding: 15px;
+                z-index:3;}
+
+}
+
+@media screen and (max-width: 640px){
+    .moitie{width: 100%;}
+}
+
+                    /*===== gestion des colonnes =====*/
+
+.col-2-img {
+    display: flex;
+    -webkit-flex-direction: row;
+    -webkit-justify-content: space-between;
+    -webkit-flex-wrap: wrap;
+}
+
+.col-2-img > div:first-of-type {
+    width: calc(66.6% - 0.5em);
+    vertical-align: top;
+    overflow: hidden;
+    margin-bottom: 1em;
+}
+
+.col-2-img > div {
+    width: calc(33.3% - 0.5em);
+    vertical-align: top;
+    margin-bottom: 1em;
+}
+
+div > img {
+    width: 100%;
+    height: auto;
+}
+
+.containerx2 {
+    display: flex;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.containerx2 > div {
+    width: calc(50% - 0.5em);
+    vertical-align: top;
+    overflow: hidden;
+    margin-bottom: 1em;
+}
+
+.containerx2-inverse {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.containerx2-inverse > div {
+    overflow: hidden;
+    margin-bottom: 1em;
+}
+
+.containerx3 {
+    display: flex;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.containerx3 > div,
+.containerx3 > a {
+    width: calc(33.3% - 0.5em);
+    vertical-align: top;
+    overflow: hidden;
+    margin-bottom: 1em;
+}
+
+.containerx3 > div > img {
+    width: 100%;
+}
+
+.col-2-txt {
+    display: flex;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+}
+
+.col-2-txt > div:last-of-type {
+    width: calc(66.6% - 0.5em);
+    vertical-align: top;
+    overflow: hidden;
+    margin-bottom: 1em;
+}
+
+.col-2-txt > div {
+    width: calc(33% - 1em);
+    vertical-align: top;
+}
+
+.containerx4 {
+    display: flex;
+    -webkit-flex-direction: row;
+    -webkit-justify-content: space-between;
+    -webkit-flex-wrap: wrap;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+
+.containerx4 > div {
+    width: calc(25% - 0.5em);
+    margin-bottom: 1em;
+}
+
+.fiche {
+    background-color: #fff;
+    padding: 15px;
+}
+
+.fiche img {
+    width:100%;
+    height:auto;
+}
+
+.fiche > div {
+    height: 250px;
+    overflow: hidden;
+}
+
+
+
+@media screen and (max-width: 960px){
+    .containerx4 > div {
+        width: calc(50% - 0.5em);
+        margin-bottom: 1em;
+    }
+    .col-2-img > div:first-of-type {
+        width: 100%;
+        margin-bottom: 1em;
+    }
+    .col-2-img > div {
+        width: 100%;
+    }
+    .containerx3 > div,
+    .containerx3 > a{
+        width: calc(50% - 0.5em);
+        margin-bottom: 1em;
+    }
+    .col-2-txt > div:last-of-type {
+        width: 100%;
+        margin-bottom: 1em;
+    }
+    .col-2-txt > div {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 640px){
+    .containerx4 > div {
+        width: 100%;
+    }
+    .containerx3 > div,
+    .containerx3 > a {
+        width: 100%;
+        margin-bottom: 1em;
+    }
+    .containerx2 > div {
+        width: 100%;
+    }
+    .principale ul,
+    video {
+        width:100%;
+        padding: 0;
+    }
+}
+
+.col-2-txt p,
+.col-2-img p,
+.containerx3 p,
+.containerx2 p,
+.containerx4 p{
+    margin-top: 0;
+}
+
+.principale ul,
+ video {
+     width:90%;
+     padding: 0;
+     margin-left:auto;
+     margin-right:auto;
+ }
+                    /*===== gestion images cliquables =====*/
+
+figure {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+}
+
+figure > img {
+    vertical-align: middle;
+    width: auto;
+    height: 250px;
+}
+
+figcaption {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: rgba(0,0,0,0.6);
+}
+
+figcaption p {
+    top: calc(60% - 24px * 0.5);
+    position: absolute;
+    padding: 1em;
+    width: 100%;
+    margin: 0;
+}
+
+
+@media screen and (max-width: 640px) {
+    figcaption {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background-color: rgba(0,0,0,0.6);
+    }
+}
+
+                    /*=========== Couleurs ===========*/
+
+.blanc{
+    color: white;
+}
+
+.noir{
+    color: black;
+}
+
+.bleu-fonce{
+    color: #056AB0;
+}
+
+.bleu-clair{
+    color: #078ACC;
+}
+
+.orange{
+    color: #DC931A;
+}
+
+.vert{
+    color: #B7C72A;
+}
+
+.violet{
+    color: #981B79;
+}
+
+.gris{
+    color: #626A71;
+}
+
+/* ========================= Spécifique =========================*/
+
+                    /*========= gestion images =========*/
+
+.img-head{
+    position: relative;
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+    padding-top:20%;
+    padding-bottom:20%;
+}
+
+.img-head > h1,
+.img-head > img,
+.banniere > h1,
+.banniere > img{
+    z-index: 3;
+}
+
+.img-background {
+    position: relative;
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+    padding-top:15%;
+    padding-bottom:15%;
+}
+
+.banniere {
+    position: relative;
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+    padding-top:6%;
+    padding-bottom:3%;
+}
+
+                    /*=========== Page campus ===========*/
+
+.campus {
+    background: url("../image-contenu/img-head/viecampus.jpeg") no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height:auto;
+}
+
+.campus::before {
+    content: "";
+    background-color: rgba(183,199,42,0.7);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+.campus2 {
+    background: url("../image-contenu/img-head/associations.jpeg") no-repeat fixed;
+    background-size: cover;
+    width: 100%;
+    height:auto;
+}
+
+.campus2::before {
+    content: "";
+    background-color: rgba(183,199,42,0.7);
+    position: absolute;
+    top:0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+                    /*=========== Page recherche ===========*/
+
+.recherche{
+    background: url("../image-contenu/img-head/recherche.jpg") no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height:auto;
+}
+
+.recherche::before {
+    content: "";
+    background-color: rgba(152,27,121,0.7);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+.recherche2 {
+    background: url("../image-contenu/img-head/labo.jpeg") no-repeat fixed;
+    background-size: cover;
+    width: 100%;
+    height:auto;
+}
+
+.recherche2::before {
+    content: "";
+    background-color: rgba(152,27,121,0.7);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+                    /*============= Page UBFC =============*/
+
+.ubfc{
+    background: url("../image-contenu/img-head/ubfc.jpeg") no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height:auto;
+}
+
+.ubfc::before {
+    content: "";
+    background-color: rgba(5,106,176,0.7);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+.ubfc2 {
+    background: url("../image-contenu/img-head/direction.jpeg") no-repeat fixed;
+    background-size: cover;
+    width: 100%;
+    height:auto;
+}
+
+.ubfc2::before {
+    content: "";
+    background-color: rgba(5,106,176,0.7);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+.ubfc3 {
+    background: url("../image-contenu/img-head/ubfc3.jpeg") no-repeat fixed;
+    background-size: cover;
+    width: 100%;
+    height:auto;
+}
+
+.ubfc3::before {
+    content: "";
+    background-color: rgba(5,106,176,0.7);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+                    /*========= Page international =========*/
+
+.international{
+    background: url("../image-contenu/img-head/International.jpeg") no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height:auto;
+}
+
+.international::before {
+    content: "";
+    background-color: rgba(220,147,26,0.7);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+.international2 {
+    background: url("../image-contenu/img-head/international2.jpeg") no-repeat fixed;
+    background-size: cover;
+    width: 100%;
+    height:auto;
+}
+
+.international2::before {
+    content: "";
+    background-color: rgba(220,147,26,0.7);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+                    /*========= Page opportunités =========*/
+
+.opportunites {
+    background: url("../image-contenu/img-head/randompicture.jpeg") no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height:auto;
+}
+
+.opportunites::before {
+    content: "";
+    background-color: rgba(183,199,42,0.7);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+.opportunites2 {
+    background: url("../image-contenu/img-head/pepite.png") no-repeat fixed;
+    background-size: cover;
+    width: 100%;
+    height:auto;
+}
+
+.opportunites2::before {
+    content: "";
+    background-color: rgba(183,199,42,0.7);
+    position: absolute;
+    top:0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+                    /*========== Page actualités ==========*/
+
+.actus{
+    background: url("../image-contenu/img-head/Actualites.jpeg") no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height:auto;
+}
+
+.actus::before {
+    content: "";
+    background-color: rgba(220,147,26,0.7);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+                    /*========= Page Formations =========*/
+
+.formation{
+    background: url("../image-contenu/img-head/Formation.jpeg") no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height:auto;
+}
+
+.formation::before {
+    content: "";
+    background-color: rgba(7,138,204,0.7);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+/* ========================= Page type =========================*/
+
+                    /*====== Page projets-recherche =====*/
+
+.archive a {
+    margin-left: 0.5em;
+}
+
+                    /*====== gestion des bas de pages =====*/
+
+.pages ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.pages li {
+    margin-right: 0.5em;
+}
+
+.pages p,
+.pages a{
+    margin: 0;
+}
+
+                    /*====== gestion des annexes =====*/
+
+.annexe {
+    border-top: 2px solid #DC931A;
+    padding-top: 2em;
+}
+
+                    /*==== page formation doctorale ====*/
+
+.tuiles:first-of-type {
+    background-color: #056AB0;
+}
+
+.tuiles:nth-of-type(2) {
+    background-color: #bc249c;
+}
+
+.tuiles:nth-of-type(3) {
+    background-color: #626A71;
+}
+
+.tuiles:nth-of-type(4) {
+    background-color: #DC931A;
+}
+
+.tuiles:nth-of-type(5) {
+    background-color: #078ACC;
+}
+
+.tuiles:last-of-type {
+    background-color: #B7C72A;
+}
+
+/*Champs personalisé*/
+
+.post-meta-key{
+    display: none;
+}

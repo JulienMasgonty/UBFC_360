@@ -1,0 +1,63 @@
+/*animation fleche début de page*/
+#fleche{
+    -moz-animation: bounce 0.35s ease infinite alternate;
+    -webkit-animation: bounce 0.35s ease infinite alternate;
+    animation: bounce 0.35s ease infinite alternate;
+    width: 2em;
+    padding-top: 40px
+}
+@keyframes bounce{
+    from {transform: translateY(0);}
+    to   {transform: translateY(-20px);}
+}
+
+/*animation au survol d'une image cliquable*/
+figure > figcaption {
+    -webkit-transition: top 0.4s ease;
+    -moz-transition: top 0.4s ease;
+    -ms-transition: top 0.4s ease;
+    -o-transition: top 0.4s ease;
+    transition: top 0.4s ease;
+}
+
+figure:hover > figcaption {
+    top: 0;
+}
+
+/*animation sur les résultats*/
+.result > a::after {
+    content: '';
+    position: absolute;
+    background-color: #078acc;
+    height: 2px;
+    width: 0;
+    bottom:-2px;
+    left:0;
+}
+
+.result > a:hover::after {
+    width: 10em;
+    position: absolute;
+    -webkit-transition: width 0.4s ease;
+    -moz-transition: width 0.4s ease;
+    -ms-transition: width 0.4s ease;
+    -o-transition: width 0.4s ease;
+    transition: width 0.4s ease;
+}
+
+/*animation sur les formations doctorales*/
+.tuiles > p,
+.tuiles > h4,
+.tuiles > img{
+    -webkit-transition: transform 0.2s;
+    -moz-transition: transform 0.2s;
+    -ms-transition: transform 0.2s;
+    -o-transition: transform 0.2s;
+    transition: transform 0.2s;
+}
+
+.tuiles:hover > p,
+.tuiles:hover > h4,
+.tuiles:hover > img{
+    transform: scale(1.1,1.1);
+}

@@ -1,0 +1,3 @@
+Mar 14 2017 23:31:55
+{"Number":2,"Message":"rmdir(C:\\UwAmp\\www\\wordpressUBFC\\wp-content\\plugins\\all-in-one-wp-migration\\storage\\3xocqkxchk5d): Directory not empty","File":"C:\\UwAmp\\www\\wordpressUBFC\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\model\\export\\class-ai1wm-export-clean.php","Line":49}
+

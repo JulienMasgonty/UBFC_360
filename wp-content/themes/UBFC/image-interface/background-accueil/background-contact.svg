@@ -1,0 +1,16 @@
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 585.98 348">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #dc931a;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <title>background-contact</title>
+  <path class="cls-1" d="M2336,1853.28h71.71c-63.17-52.7-118.85-131.31-171.37-213.33-29.76-46-58.4-92.42-87.49-134.67h-59.82c56.29,76.85,113.45,179.68,180.29,269C2290.28,1802.1,2312.39,1828.93,2336,1853.28Z" transform="translate(-2089.09 -1505.28)"/>
+  <line class="cls-2" x1="585.98" x2="585.98" y2="348"/>
+</svg>

@@ -1,0 +1,16 @@
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 597.39 348">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #078acc;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <title>background-focus</title>
+  <path class="cls-1" d="M2675.07,1471c-19.79-18-39.69-36.61-59.71-55.44-121-111.82-247.63-230.43-404.64-231.46-43.44.18-87.64,9.58-133,30.16v54.31c47.51-25.38,91.72-35.82,133-35.61,129.49-1.14,250.83,105.23,371.43,218.35q14.13,13,28.24,26.13h64.71V1471Z" transform="translate(-2077.69 -1129.41)"/>
+  <line class="cls-2" x1="1.07" x2="597.39"/>
+</svg>
