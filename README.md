@@ -1,4 +1,7 @@
 # Site wordpress UBFC
+## Réponse à la commande
+
+_Réaliser le site internet visant à présenter l'UBFC, ainsi que les formations et services qu'elle propose, ses objectifs. Le site doit être fonctionnel ; sa ligne éditoriale adaptée à ses différentes cibles (les étudiants, les institutionnels, les spécialistes). Le but est de créer un sentiment d'appartenance et de permettre aux gens de comprendre pourquoi cette COMMUE a été créée. Il y a un réel besoin de visibilité, d'originalité et de modernité, par une mise en avant des avantages du territoire et des formations proposées. Les projets I-site, les PEPITE, ainsi que es écoles doctorales seront au coeur du site : il faudrait d'ailleurs uniformiser les identités visuelles des différents sites, afin de conserver une certaine cohérence graphique._
 ## A faire :
 
 __Identité visuelle :__ 
