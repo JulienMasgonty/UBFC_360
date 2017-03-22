@@ -1,0 +1,236 @@
+header 
+	position: fixed
+	height: $header-h
+	width: 100%
+	// barre de navigation - toujours visible
+	.nav-bar 
+		height: $header-h
+		line-height: $header-h
+		vertical-align: top
+		position: relative
+		top: 0
+		left: 0
+		background: 
+			color: $white
+
+		.menu 
+			position: absolute
+			top: 50%
+			+transform(translateY(-50%))
+			left: 20px
+			vertical-align: top
+
+			&:hover
+				cursor: pointer
+
+			.bar 
+				width: 30px
+				height: 4px
+				margin: 5px 0
+				display: block
+				background:
+					color: $blue
+
+		.socials
+			position: absolute
+			top: 0
+			right: 60px
+			vertical-align: top
+
+			ul 
+				li 
+					display: inline-block
+
+					a 
+						color: $blue
+						display: block
+						height: $header-h
+						width: $header-h
+						line-height: $header-h
+						position: relative
+						text-align: center
+						font-size: 2rem
+
+						&:after
+							content: ''
+							display: block
+							width: 100%
+							height: 4px
+							transform-origin: bottom
+							+transform(scaleY(0))
+							+transition(400ms)
+							position: absolute
+							vertical-align: bottom
+							left: 0
+							bottom: 0
+							background:
+								color: $blue
+
+						&:hover
+							&:after
+								+transform(scaleY(1))
+
+	.main-nav
+		left: 0
+		transform-origin: left
+		+transform(translateX(-100%))
+		+transition(400ms)
+		width: 100vw
+		height: 100vh
+
+		position: fixed
+		top: 0
+		left: 0
+		vertical-align: top
+		padding: 0 30px
+		padding-top: 30px
+		font-family: 'polly', sans-serif
+		background:
+			color: $blue
+
+		.arrow 
+			position: absolute
+			vertical-align: top
+			top: -10px
+			left: 20px
+			color: white 
+			font-size: 30px
+			height: 40px
+			line-height: 40px
+
+			span 
+				position: relative
+
+				&:after
+					content: ''
+					display: block
+					width: 100%
+					height: 2px 
+					position: absolute
+					bottom: -10px
+					left: 0
+					vertical-align: bottom
+					transform-origin: left
+					+transform(scaleX(0))
+					+transition(400ms)
+					background:
+						color: $white
+
+			i
+				padding-right: 20px
+
+			&:hover
+				cursor: pointer
+
+				span
+					&:after
+						+transform(scaleX(1))
+
+		.liste-nav
+			position: absolute
+			vertical-align: top
+			top: 50%
+			+transform(translateY(-50%))
+			width: 100%
+
+			.block-nav
+				width: calc(33.3% - 60px)
+				margin: 30px
+				height: 80px
+				display: inline-block
+				position: relative
+				font-size: 2rem
+				+transition(400ms)
+
+				&.hidden
+					opacity: 0
+
+				.titre 
+					color: white
+					position: absolute
+					vertical-align: top
+					top: 50%
+					+transform(translateY(-50%))
+					text-align: center
+					width: 100%
+
+					.txt
+						position: relative
+
+						i 
+							display: none
+							position: absolute
+							vertical-align: top
+							top: 5px
+							right: -20px
+
+						&:after
+							content: ''
+							display: block
+							width: 100%
+							height: 2px
+							position: absolute
+							vertical-align: bottom
+							left: 0
+							bottom: -10px
+							transform-origin: left
+							+transform(scaleX(0))
+							+transition(400ms)
+							background: 
+								color: $white
+
+				&:hover
+					.titre
+						.txt
+							i 
+								display: inline-block
+
+							&:after
+								+transform(scaleX(1))
+
+				&:hover
+					cursor: pointer
+
+		.sub-nav-list
+			position: absolute
+			vertical-align: top
+			top: 0
+			left: 500px
+			width: 0
+			height: 100%
+			transform-origin: left
+			+transition(400ms)
+			overflow: hidden
+
+			&.active
+				width: calc(100% - 500px)
+
+			.sub-nav 
+				width: calc(100vw - 500px)
+				position: absolute
+				vertical-align: top
+				top: 50%
+				+transform(translateY(-50%))
+				left: 0
+				border-left: 1px solid $white
+				padding-left: 100px
+				display: none
+
+				&.active 
+					display: block
+
+				ul 
+					list-style: none
+
+					li 
+						a
+							color: $white
+							font-size: 2rem
+							line-height: 5rem
+							text-decoration: none
+
+		&.active
+			+transform(translateX(0))
+
+
+

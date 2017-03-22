@@ -1,0 +1,35 @@
+
+@charset "UTF-8"
+
+// Fichier principal, ou seront importés les partials.
+// Pas de vrai code css dedans
+
+// Ce site est codé en Sass : référez-vous à la documentation en ligne si vous ne connaissez
+// pas ce prépocesseur css. 
+// Les styles sont situés dans les partials, qui sont ensuite importés ici : ce fichier est ensuite compilé
+// en CSS minifié.
+
+// Chaque nom de partial doit obligatoirement commencer par "_" et utiliser l'extention ".sass" !
+
+// L'ordre d'importation des partials définit l'ordre dans lequel le code est compilé
+// attention donc à respecter un ordre cohérent, afin que vos styles soient chargés dans l'ordre approprié.
+
+// Pour rappel, les commentaires sous cette forme ne s'affichent pas en css
+/* Les commentaires sous cette forme s'affichent en css, sauf dans la version compressée (--style compressed) */
+
+// w(´･ω･`)w
+
+
+// Components - Éléments éssentiels aux css mais sans créer de styles particuliers
+@import 'components/fonts'
+@import 'components/variables'
+@import 'components/mixins'
+
+// Styles - Éléments de styles généraux. Dépendants des Components
+@import 'styles/base'
+@import 'styles/header'
+@import 'styles/footer'
+@import 'styles/content'
+
+// Pages - Styles spécifiques à certaines pages
+// --
