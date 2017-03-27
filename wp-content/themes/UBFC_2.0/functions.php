@@ -9,6 +9,13 @@
 	}
 
 	/**
+	 * ajout de fonctionnalités/supports à wordpress
+	 */
+	add_theme_support('html5');
+	add_theme_support('menus');
+	add_theme_support('post-thumbnail');
+
+	/**
 	 * liaison des css et js
 	 */
 	add_action('wp_enqueue_scripts', 'ubfc_styles');
@@ -20,11 +27,51 @@
 	}
 
 	/**
-	 * ajout de fonctionnalités/supports à wordpress
+	 * Déclaration des types de posts custom
 	 */
-	add_theme_support('html5');
-	add_theme_support('menus');
-	add_theme_support('post-thumbnail');
+	add_action('init', 'ubfc_custom_types');
+	function ubfc_custom_types() {
+		register_post_type('actus',
+			array(
+				'label' 		=> array(
+					'name' => 'Actualités',
+					'singular_name' => 'Actualité',
+					'all_items' => 'Toutes les Actualités',
+					'add_new_item' => 'Ajouter une actualité',
+					'edit_item' => 'Modifier l\'actualité',
+					'new_item' => 'Nouvelle actualité',
+					'view_itme' => 'voir l\'actualité',
+					'search_item' => 'Rechercher parmis les actualités',
+					'not_found' => 'Pas d\'actualité trouvée',
+					'not_found_in_trash' => 'Pas d\'actualité trouvée dans la corbeille'
+				),
+				'public' 		=> true,
+				'has_archive' 	=> true,
+				'supports' 		=> array('title', 'editor', 'excerpt', 'thumbnail')
+			)
+		);
+
+		register_post_type('events',
+			// Définition des évènements
+			array(
+				'label' 		=> array(
+					'name' 					=> 'Évènements',
+					'singular_name' 		=> 'Évènement',
+					'all_items' 			=> 'Tous les évènement',
+					'add_new_item' 			=> 'Ajouter un évènement',
+					'edit_item' 			=> 'Modifier l\'évènement',
+					'new_item' 				=> 'Nouveau évènement',
+					'view_item' 			=> 'Voir l\'évènement',
+					'search_items' 			=> 'Rechercher parmi les évènement',
+					'not_found' 			=> 'Pas d\'évènement trouvé',
+					'not_found_in_trash'	=> 'Pas d\'évènement dans la corbeille'
+				),
+				'public' 		=> true,
+				'has_archive' 	=> true,
+				'supports' 		=> array('title', 'editor', 'excerpt', 'thumbnail')
+			)
+		);
+	} 
 
 /**
  * Pour aider à trouver les templates à utiliser - à supprimer une fois le code terminé

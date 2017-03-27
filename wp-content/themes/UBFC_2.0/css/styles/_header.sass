@@ -2,6 +2,11 @@ header
 	position: fixed
 	height: $header-h
 	width: 100%
+	top: 0
+	left: 0
+	vertical-align: top
+	z-index: 3000
+
 	// barre de navigation - toujours visible
 	.nav-bar 
 		height: $header-h
@@ -31,6 +36,24 @@ header
 				background:
 					color: $blue
 
+		.logo-nav
+			width: 158px // à modifier en fonction de la hauteur
+			height: 50px
+			margin-left: 70px
+			position: absolute
+			top: 50%
+			opacity: 0
+			+transition(400ms)
+			+transform(translateY(-50%))
+			vertical-align: top
+			background:
+				image: url(../img/logosmall-inline.svg)
+				repeat: no-repeat
+				size: contain
+
+			&.visible
+				opacity: 1
+
 		.socials
 			position: absolute
 			top: 0
@@ -50,6 +73,7 @@ header
 						position: relative
 						text-align: center
 						font-size: 2rem
+						+transition(250ms)
 
 						&:after
 							content: ''
@@ -58,23 +82,42 @@ header
 							height: 4px
 							transform-origin: bottom
 							+transform(scaleY(0))
-							+transition(400ms)
+							+transition(100ms)
 							position: absolute
 							vertical-align: bottom
 							left: 0
 							bottom: 0
-							background:
-								color: $blue
+
+						&.fb 
+							&:after
+								background-color: $fb
+
+						&.tw 
+							&:after
+								background-color: $tw
+
+						&.yt 
+							&:after
+								background-color: $yt
 
 						&:hover
 							&:after
 								+transform(scaleY(1))
 
+							&.fb 
+								color: $fb
+
+							&.tw 
+								color: $tw
+
+							&.yt 
+								color: $yt
+
 	.main-nav
 		left: 0
 		transform-origin: left
 		+transform(translateX(-100%))
-		+transition(400ms)
+		+transition(250ms)
 		width: 100vw
 		height: 100vh
 
@@ -157,12 +200,17 @@ header
 					.txt
 						position: relative
 
-						i 
+						i
 							display: none
 							position: absolute
 							vertical-align: top
 							top: 5px
-							right: -20px
+
+							&.down
+								right: -20px
+
+							&.left
+								left: -20px
 
 						&:after
 							content: ''
@@ -183,10 +231,25 @@ header
 					.titre
 						.txt
 							i 
-								display: inline-block
+								&.down
+									display: inline-block
+
+								&.left 
+									display: none
 
 							&:after
 								+transform(scaleX(1))
+
+				&.visible 
+					&:hover
+						.titre
+							.txt
+								i 
+									&.down
+										display: none
+
+									&.left 
+										display: inline-block
 
 				&:hover
 					cursor: pointer
@@ -199,7 +262,7 @@ header
 			width: 0
 			height: 100%
 			transform-origin: left
-			+transition(400ms)
+			+transition(700ms)
 			overflow: hidden
 
 			&.active
@@ -228,6 +291,11 @@ header
 							font-size: 2rem
 							line-height: 5rem
 							text-decoration: none
+							padding-left: 0
+							+transition(100ms)
+
+							&:hover
+								padding-left: 15px
 
 		&.active
 			+transform(translateX(0))

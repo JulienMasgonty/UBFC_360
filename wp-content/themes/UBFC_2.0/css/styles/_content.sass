@@ -1,0 +1,278 @@
+main 
+	position: relative
+
+	// PAGE D'ACCUEIL
+	// =================================================================
+	.logo
+		text-indent: -9999rem
+		display: block
+		width: 300px
+		height: 95px
+		position: absolute
+		top: 20px
+		left: 40px 
+		vertical-align: top
+		z-index: 2000
+		background:
+			image: url(../img/logo.svg)
+			repeat: no-repeat
+			size: contain
+
+	// Fonctionnement à revoir mais Mise en page correcte
+	.focus
+		position: relative
+		margin-top: 130px
+		height: calc(100vh - 260px)
+		width: 100%
+
+		.focus-media
+			width: auto
+			height: 100%
+			position: absolute
+			vertical-align: top
+			left: 50%
+			margin-left: -100px
+			+transform(translateX(-50%))
+			border-right: 10px solid $orange
+
+		h2
+			display: inline
+			color: $white
+			padding: 15px 50px
+			position: absolute
+			right: 25%
+			top: 50%
+			+transform(translateY(-80%))
+			vertical-align: top
+			background:
+				color: $orange
+
+		div.text
+			color: darken($gray, 5%)
+			position: absolute
+			right: 25%
+			top: 50%
+			width: 260px
+			margin-top: 130px
+			margin-right: -70px
+			border-right: 3px solid $orange
+			+transform(translateY(-80%))
+			+transition(100ms)
+			background:
+				color: $white
+
+			p 
+				width: 100%
+				height: 100%
+				position: relative
+				padding: 15px
+				background:
+					color: $white
+
+				.plus
+					display: block
+					color: $white
+					position: absolute
+					right: -30px
+					bottom: 30px
+					z-index: -1
+					border-radius: 0 5px 5px 0
+					+transition(100ms)
+					background:
+						color: $orange
+
+					i 
+						width: 30px
+						height: 30px
+						text-align: center
+						line-height: 30px
+						font-size: 1.4rem
+
+
+
+			&:hover
+				cursor: pointer
+				border-right: 4px solid $orange
+
+				.plus 
+					border-radius: 0 0 0 0
+
+	.actus 
+		padding-top: 80px
+		position: relative
+		padding: 80px
+		background:
+			color: $white
+
+		.scroll-down
+			position: absolute
+			height: 70px
+			width: 70px
+			top: 0
+			vertical-align: top
+			left: 50%
+			+transform(translateX(-50%))
+			background:
+				color: $white
+
+			&:before
+				content: ''
+				display: block
+				width: 0
+				height: 0
+				border: 70px solid transparent
+				border-bottom: 50px solid white
+				position: absolute
+				top: -119px
+				left: 50%
+				transform: translateX(-50%)
+
+
+			.container
+				i 
+					position: absolute
+					top: 0
+					left: 50%
+					vertical-align: top
+					+transform(translate(-50%, -50%))
+					font-size: 40px
+					color: darken($lightgray, 10%)
+
+		.actualites, .evenements
+			display: inline-block
+			width: 50%
+			padding: 20px 30px
+			vertical-align: top
+
+			ul
+				list-style: none
+
+				li 
+					display: block
+					height: 80px
+					margin: 5px
+					border-bottom: 1px solid darken($lightgray, 15%)
+					padding-bottom: 5px
+
+					a 
+						text-decoration: none
+						display: block
+						height: 100%
+						width: 100%
+						color: darken($gray, 5%)
+						position: relative
+
+						.plus
+							height: 75px
+							width: 98px
+							line-height: 75px
+							color: $white
+							font-size: 48px
+							position: absolute
+							vertical-align: top
+							top: 0
+							left: 0
+							opacity: 0
+							+transition(100ms)
+							text-align: center
+							background:
+								color: rgba($green, .2)
+
+						.vignette, .date
+							height: 100%
+							width: 98px
+							margin-right: 5px
+
+						.date 
+							background-color: $green
+							color: $white
+							font-size: 40px
+							text-align: center
+							padding-right: 0
+							+transition(100ms)
+
+							.month	
+								display: block
+								font-size: 18px
+								line-height: 6px
+								text-transform: uppercase
+
+						.date, .vignette, .text
+							display: inline-block
+							vertical-align: middle
+
+						&:hover
+							background:
+								color: $lightgray
+
+							.date
+								padding-right: 10px
+
+							.plus
+								opacity: 1
+
+			h2
+				a 
+					padding-left: 10px
+					font-size: 1.6rem
+
+		.actualites
+			border-right: 2px solid darken($lightgray, 15%)
+
+	.newsletter	
+		padding: 80px
+
+		.news-tagline
+			font-weight: bold 
+			font-size: 2rem
+			text-align: center
+			padding-bottom: 40px
+
+		form 
+			text-align: center
+
+			input
+				display: inline-block
+				padding: 10px
+				border: none
+				width: 250px
+				margin: 5px
+				position: relative
+				border-bottom: 3px solid $purple
+				background: 
+					color: $white
+
+			button
+				display: inline-block
+				padding: 10px
+				border: none
+				width: 250px
+				margin: 5px
+				position: relative
+				color: $white
+				background:
+					color: lighten($gray, 15%)
+
+				&:after
+					content: ''
+					display: block
+					height: 2px
+					width: 100%
+					position: absolute
+					vertical-align: top
+					bottom: -2px
+					left: 0
+					+transition(100ms)
+					background:
+						color: $purple
+
+				&:hover
+					cursor: pointer
+
+					&:after 
+						height: 5px
+
+
+
+
+

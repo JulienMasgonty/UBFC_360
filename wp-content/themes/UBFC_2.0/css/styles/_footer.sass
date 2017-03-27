@@ -1,0 +1,90 @@
+footer
+	padding-bottom: 0
+	background:
+		color: darken($lightgray, 5%)
+
+	.foot-contact 
+		padding: 80px
+
+		.map
+			height: 400px
+			width: 50%
+
+			iframe
+				width: 100%
+				height: 100%
+
+		.map, .infos 
+			width: 50%
+			display: inline-block
+			vertical-align: middle
+
+		.infos 
+			padding-left: 50px
+
+			.block
+				border-bottom: 1px solid darken($lightgray, 15%)
+				margin-bottom: 10px
+				padding-bottom: 10px
+
+				&:first-of-type
+					border-top: 1px solid darken($lightgray, 15%)
+					padding-top: 10px
+
+			p
+				font-size: 2rem
+				font-weight: bold
+
+				&.nom
+					font-size: 2.8rem
+					margin: 20px 0
+					margin-left: -20px
+
+			i, .adresse, .tel, .mail 
+				display: inline-block
+				vertical-align: middle 
+
+			i.map-ico, .adresse 
+				vertical-align: top
+
+
+			i 
+				font-size: 2rem
+				color: $blue
+				width: 30px
+				text-align: center
+				padding-right: 10px
+
+				&.map-ico 
+					padding-top: 5px
+
+	.foot-legacy
+		text-align: center
+		padding: 10px
+		background:
+			color: $gray
+
+		a
+			color: $lightgray
+			+transition(100ms)
+
+			&:hover
+				color: darken($lightgray, 15%)
+
+	.foot-partenaires 
+		padding: 15px
+		background:
+			color: $white
+
+		ul 
+			text-align: center
+
+			li 
+				display: inline-block
+				height: 70px
+				margin: 7px
+
+				a
+					img 
+						width: auto
+						height: 70px

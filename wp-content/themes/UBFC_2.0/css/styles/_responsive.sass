@@ -1,0 +1,402 @@
+// Version mobile seulement
+// ======================================================================
+@media screen and (max-width: $xs-max)
+	main 
+		.focus
+			.block-title
+				top: -15px
+				left: 0
+				+transform(translateY(0))
+				z-index: 2
+
+			div.text
+				top: 0
+				transform: translateY(0)
+				right: -100%
+				z-index: 1
+				height: 100%
+				width: 100%
+				border-bottom: 3px solid $orange
+				border-right: none
+				padding: 0 40px
+				padding-top: 60px
+				margin-top: 0
+				+transition(100ms)
+
+				&:hover
+					border-right: none
+
+				&.active
+					right: 70px
+
+				.contain-txt
+					position: absolute
+					top: 50%
+					+transform(translateY(-50%))
+
+					p
+						.plus 
+							display: none
+
+						.arrow
+							display: block
+							position: absolute
+							top: 40px
+							left: -149px
+							display: block
+							color: $white
+							border-radius: 5px 0 0 5px
+							+transition(250ms)
+							background:
+								color: $orange
+
+							&.arrow-right
+								left: -40px
+								border-radius: 0 3px 3px 0
+
+							i 
+								width: 30px
+								height: 30px
+								text-align: center
+								line-height: 30px
+								font-size: 1.4rem
+
+
+// Version mobile - tablette
+// ======================================================================
+@media screen and (max-width: $sm-max)
+	body
+		width: 100vw
+		overflow-x: hidden
+
+	header
+		.nav-bar
+			.socials
+				display: none
+
+			.socials-mobile
+				display: block
+
+				i
+					font-size: 30px
+					color: $blue
+					top: 50%
+					+transform(translateY(-50%))
+					position: absolute
+					vertical-align: top
+					right: 20px
+					height: $header-h
+					width: $header-h
+					text-align: center
+
+				ul 
+					width: 100%
+					height: 60px
+					position: absolute
+					top: $header-h
+					left: 0
+					padding: 10px 0
+					transform-origin: top
+					+transform(scaleY(0))
+					+transition(100ms)
+					background:
+						color: $lightgray
+
+					&.active
+						+transform(scaleY(1))
+
+					li 
+						display: inline-block
+						height: 100%
+						width: 33.3%
+						border-right: 1px solid $white
+						vertical-align: top
+
+						a 
+							display: block
+							width: 33.3%
+							height: 100%
+							margin: auto
+							text-align: center
+
+							i 
+								display: block
+								width: 100%
+								height: 100%
+								position: static
+								top: 0
+								+transform(translateY(0))
+								vertical-align: top
+								line-height: 40px
+
+			.logo-nav
+				opacity: 1
+				margin-left: 0
+				left: 50%
+				+transform(translate(-50%, -50%))
+				width: 125px
+
+
+		.main-nav
+			width: 100vw
+			overflow-x: hidden
+			padding: 0
+
+			.container
+				height: auto
+
+			.arrow
+				top: 0px
+				left: 0px
+				padding: 15px
+				width: 100%
+				background-color: $blue
+				position: fixed // not working, why ?
+				height: auto
+
+			.liste-nav
+				margin-top: 95px
+				top: 0
+				+transform(translateY(0))
+				position: static
+
+				.block-nav
+					width: calc(100% - 30px)
+					padding-bottom: 15px
+					margin: 15px
+					margin-top: 0
+					height: auto
+					border-bottom: 1px solid rgba($white, .4)
+					font-size: 1.4rem
+					+transition(100ms)
+
+					&.visible 
+						padding-left: 20px
+						font-size: 1.8rem
+
+					.titre
+						position: static
+						left: 0
+						+transform(translatX(0))
+
+						.txt 
+							&:after
+								+transition(100ms)
+
+			.sub-nav-list
+				top: 140px
+				height: auto
+
+				&.active
+					width: 100%
+					+transition(0ms)
+					left: 0
+
+					.sub-nav
+						top: 0
+						padding-left: 0
+						+transform(translateY(0))
+						width: calc(100% - 60px)
+						border-left: 0
+						text-align: center
+						position: relative
+						+transform(translateY(0))
+						text-align: left
+						margin: 0 15px
+
+						ul
+							li 
+								border-bottom: 1px solid rgba($white, .4)
+
+								a 
+									font-size: 1.4rem
+									line-height: 2rem
+									display: block
+									padding: 10px 0
+
+	main 
+		.logo
+			left: 50%
+			+transform(translateX(-50%))
+
+		.focus
+			width: 100%
+			height: auto
+
+			.focus-media
+				position: static
+				left: 0
+				top: 0
+				+transform(translateY(0))
+				width: 100%
+				height: auto
+				margin: 0
+
+		.actus
+			padding: 15px
+
+			.scroll-down	
+				display: none
+
+			.actualites, .evenements
+				display: block
+				width: 100%
+				padding: 0
+				border-right: none
+
+				h2
+					position: relative
+					margin-bottom: 60px
+
+					a 
+						display: block
+						position: absolute
+						bottom: -30px
+						left: 0
+						vertical-align: top
+
+				ul 
+					li
+						height: auto
+						padding-bottom: 20px
+						margin-bottom: 20px
+
+						a
+							.vignette
+								width: 100%
+								height: auto
+
+							.plus
+								display: none
+
+							.vignette, .text
+							display: block
+
+							.date
+								width: 100%
+								height: 75px
+
+							.vignette, .date
+								margin-bottom: 15px
+
+		.newsletter
+			padding: 15px
+
+	footer
+		.foot-contact
+			padding: 15px
+
+			.map, .infos
+				display: block
+				width: 100%
+
+			.map 
+				height: 300px
+
+			.infos
+				padding-left: 0
+
+				p
+					font-size: 1.6rem
+
+					&.nom
+						margin-left: 0
+						font-size: 2rem
+
+		.foot-partenaires 
+			ul 
+				li 
+					a 
+						img
+							height: 40px
+
+
+// A partir du format tablette
+// ======================================================================
+@media screen and (min-width: $sm-min)
+	main 
+		.focus
+			div.text
+				p
+					.arrow
+						display: none
+
+
+// Format tablettes étendu (Ipad pro + petits pc)
+// ======================================================================
+@media screen and (min-width: $sm-min) and (max-width: $md-max)
+	main 
+		.focus
+			div.text
+				p
+					.arrow
+						display: none
+
+		.actus 
+			.actualites
+				ul 
+					li
+						display: inline-block
+						width: calc(50% - 10px)
+
+			.evenements
+				ul 
+					li 
+						display: inline-block
+						width: calc(25% - 10px)
+						vertical-align: top
+						border-bottom: none
+
+			.evenements, .actualites
+				display: block 
+				width: 100%
+				padding: 0
+				border-right: none
+
+				h2
+					position: relative
+					margin-bottom: 60px
+
+					a 
+						display: block
+						position: absolute
+						bottom: -30px
+						left: 0
+						vertical-align: top
+
+				ul 
+					li
+						height: auto
+						padding-bottom: 20px
+						margin-bottom: 20px
+
+						a
+							.vignette
+								width: 100%
+								height: auto
+
+							.plus
+								display: none
+
+							.vignette, .text
+							display: block
+
+							.date
+								width: 100%
+								height: 75px
+
+							.vignette, .date
+								margin-bottom: 15px
+
+// Version desktop - small
+// ======================================================================
+@media screen and (min-width: $md-min) and (max-width: $md-max)
+
+
+// Version desktop
+// ======================================================================
+@media screen and (min-width: $md-min)
+	header
+		.nav-bar 
+			.socials-mobile
+				display: none
