@@ -13,7 +13,7 @@
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi cumque reprehenderit reiciendis debitis, deleniti fugit incidunt sint. Magnam, odit, ea...
 					<span class="plus"><i class="fa fa-plus"></i></span>
 					<span class="arrow arrow-left"><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
-					<span class="arrow hidden arrow-right"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+					<span class="arrow arrow-right"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
 				</p>
 			</div>
 		</div>
