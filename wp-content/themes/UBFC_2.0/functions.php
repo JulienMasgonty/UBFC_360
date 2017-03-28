@@ -223,7 +223,7 @@
 					'not_found _in_trash' 	=> 'Pas de membre dans la corbeille'
 				)
 			)
-		)
+		);
 
 		// Décommenter cette ligne si les modifications sur les custom posts types ne sont pas prises en compte 
 		// flush_rewrite_rules(false);
