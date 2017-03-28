@@ -109,7 +109,7 @@
 					'view_item' 			=> 'Voir l\'équipe',
 					'search_items' 			=> 'Rechercher parmis les équipes',
 					'not_found' 			=> 'Pas d\'équipe trouvée',
-					'not_found _in_trash' 	=> 'Pas d\'équipe dans la corbeille'
+					'not_found_in_trash' 	=> 'Pas d\'équipe dans la corbeille'
 				),
 				'menu_icon' 	=> 'dashicons-groups',
 				'public' 		=> true,
@@ -131,7 +131,7 @@
 					'view_item' 			=> 'Voir le partenaire',
 					'search_items' 			=> 'Rechercher parmis les partenaires',
 					'not_found' 			=> 'Pas de partenaire trouvée',
-					'not_found _in_trash' 	=> 'Pas de partenaire dans la corbeille'
+					'not_found_in_trash' 	=> 'Pas de partenaire dans la corbeille'
 				),
 				'menu_icon' 	=> 'dashicons-awards',
 				'public' 		=> true,
@@ -152,8 +152,8 @@
 					'new_item' 				=> 'Nouveau Master',
 					'view_item' 			=> 'Voir le Master',
 					'search_items' 			=> 'Rechercher parmis les Master',
-					'not_found' 			=> 'Pas de Master trouvée',
-					'not_found _in_trash' 	=> 'Pas de Master dans la corbeille'
+					'not_found' 			=> 'Pas de Master trouvé',
+					'not_found_in_trash' 	=> 'Pas de Master dans la corbeille'
 				),
 				'menu_icon' 	=> 'dashicons-welcome-learn-more',
 				'public' 		=> true,
@@ -174,8 +174,8 @@
 					'new_item' 				=> 'Nouveau établissement',
 					'view_item' 			=> 'Voir le établissement',
 					'search_items' 			=> 'Rechercher parmis les établissements',
-					'not_found' 			=> 'Pas de établissement trouvée',
-					'not_found _in_trash' 	=> 'Pas de Mastétablissementer dans la corbeille'
+					'not_found' 			=> 'Pas de établissement trouvé',
+					'not_found_in_trash' 	=> 'Pas de Mastétablissementer dans la corbeille'
 				),
 				'menu_icon' 	=> 'dashicons-admin-multisite',
 				'public' 		=> true,
@@ -197,8 +197,8 @@
 					'new_item' 				=> 'Nouveau membre',
 					'view_item' 			=> 'Voir le membre',
 					'search_items' 			=> 'Rechercher parmis les membres',
-					'not_found' 			=> 'Pas de membre trouvée',
-					'not_found _in_trash' 	=> 'Pas de membre dans la corbeille'
+					'not_found' 			=> 'Pas de membre trouvé',
+					'not_found_in_trash' 	=> 'Pas de membre dans la corbeille'
 				),
 				'menu_icon' 	=> 'dashicons-businessman',
 				'public' 		=> true,
@@ -207,21 +207,25 @@
 			)
 		);
 
-		register_post_type('conseils',
+		register_post_type('archives',
 			array(
-				'label'			=> 'Conseils',
+				'label'			=> 'Archives des conseils',
 				'labels'		=> array(
-					'name' 					=> 'Conseils',
-					'singular_name' 		=> 'Conseil',
-					'all_items' 			=> 'Tous les membres du personnel',
-					'add_new_item' 			=> 'Ajouter un membre',
-					'edit_item' 			=> 'Modifier le membre',
-					'new_item' 				=> 'Nouveau membre',
-					'view_item' 			=> 'Voir le membre',
-					'search_items' 			=> 'Rechercher parmis les membres',
-					'not_found' 			=> 'Pas de membre trouvée',
-					'not_found _in_trash' 	=> 'Pas de membre dans la corbeille'
-				)
+					'name' 					=> 'Archives des conseils',
+					'singular_name' 		=> 'Archive',
+					'all_items' 			=> 'Toutes les archives',
+					'add_new_item' 			=> 'Ajouter une archive',
+					'edit_item' 			=> 'Modifier l\'archive',
+					'new_item' 				=> 'Nouvellle archive',
+					'view_item' 			=> 'Voir l\'archive',
+					'search_items' 			=> 'Rechercher parmis les archives',
+					'not_found' 			=> 'Pas d\'archive trouvée',
+					'not_found_in_trash' 	=> 'Pas d\'archive dans la corbeille'
+				),
+				'menu_icon'		=> 'dashicons-book-alt',
+				'public'		=> true,
+				'has_archive'	=> true,
+				'supports'		=> array('title', 'excerpt', 'revisions')
 			)
 		);
 
@@ -342,6 +346,33 @@
 					'id'		=> $prefix.'planning',
 					'required'	=> true,
 					'clone'		=> true,
+				)
+			)
+		);
+
+		$meta_boxes[] = array(
+			'title' 	=> 'Archives PDF',
+			'pages' 	=> array('archives'),
+			'fields'	=> array(
+				array(
+					'name'			=> 'type de conseil',
+					'desc'			=> "Sélectionner le type de conseil approprié",
+					'type'			=> 'select',
+					'id'			=> $prefix.'type_conseil',
+					'placeholder'	=> 'Sélectionner un conseil',
+					'options'		=> array('Conseil des membres', 'Conseil d\'administration', 'Conseil académique'),
+					'required'		=> true
+				),
+				array(
+					'type'	=> 'divider'
+				),
+				array(
+					'name'		=> 'PDF',
+					'desc'		=> "Lier le ou les fichier(s) PDF correspondant à la réunion tenue",
+					'type'		=> 'file_advanced',
+					'id'		=> $prefix.'archive',
+					'required'	=> true,
+					'clone'		=> true
 				)
 			)
 		);
