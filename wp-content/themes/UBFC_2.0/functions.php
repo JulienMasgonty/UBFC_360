@@ -245,6 +245,12 @@
 			'pages' 	=> array('personnel'),
 			'fields' 	=> array(
 				array(
+					'name'		=> 'Photo',
+					'type'		=> 'image_advanced',
+					'id'		=> $prefix.'img-personnel',
+					'required'	=> true
+				),
+				array(
 					'name' 		=> 'Nom',
 					'type' 		=> 'text',
 					'id' 		=> $prefix.'nom-personnel',
@@ -257,11 +263,17 @@
 					'required' 	=> true
 				),
 				array(
-					'name' 			=> 'Fonction',
+					'name'		=> 'Fonction',
+					'type'		=> 'text',
+					'id'		=> $prefix.'fonction-personnel',
+					'required'	=> true
+				),
+				array(
+					'name' 			=> 'Appartenance',
 					'type' 			=> 'select_advanced',
 					'placeholder' 	=> 'Sélectionner un champs',
-					'options' 		=> array('Direction', 'Conseil Académique', 'Conseil d\'administration', 'Conseil des membres'),
-					'id' 			=> $prefix.'fonction-personnel',
+					'options' 		=> array('Président et son équipe', 'Conseil Académique', 'Conseil d\'administration', 'Conseil des membres'),
+					'id' 			=> $prefix.'appartenance-personnel',
 					'required' 		=> true
 				)
 			)
@@ -274,7 +286,7 @@
 				array(
 					'name'		=> 'Image principale',
 					'type'		=> 'image_advanced',
-					'id'		=> $prefix.'main-img',
+					'id'		=> $prefix.'main-img-actus',
 					'required'	=> true,
 					'desc'		=> "L'image principale est celle qui sera affichée en haut de l'article. Elle servira également de vignette."
 				),
@@ -284,9 +296,8 @@
 				array(
 					'name'		=> 'Gallerie',
 					'type'		=> 'image_advanced',
-					'id'		=> $prefix.'gallery',
-					'required'	=> true,
-					'clone'		=> true
+					'id'		=> $prefix.'gallery-actus',
+					'required'	=> true
 				)
 			)
 		);
@@ -298,7 +309,7 @@
 				array(
 					'name' 			=> 'Date de début',
 					'type' 			=> 'datetime',
-					'id' 			=> $prefix.'dateDebut',
+					'id' 			=> $prefix.'dateDebut-events',
 					'js_options' 	=> array(
 						'dateFormat' => 'dd-mm-yy'
 					),
@@ -307,7 +318,7 @@
 				array(
 					'name' 			=> 'Date de fin',
 					'type' 			=> 'datetime',
-					'id' 			=> $prefix.'dateFin',
+					'id' 			=> $prefix.'dateFin-events',
 					'js_options' 	=> array(
 						'dateFormat' => 'dd-mm-yy'
 					),
@@ -319,7 +330,7 @@
 				array(
 					'name'		=> 'Image principale',
 					'type'		=> 'image_advanced',
-					'id'		=> $prefix.'main-img',
+					'id'		=> $prefix.'main-img-events',
 					'required'	=> true,
 					'desc'		=> "L'image principale est celle qui sera affichée en haut de l'article. Elle servira également de vignette."
 				),
@@ -329,9 +340,8 @@
 				array(
 					'name'		=> 'Gallerie',
 					'type'		=> 'image_advanced',
-					'id'		=> $prefix.'gallery',
-					'required'	=> true,
-					'clone'		=> true
+					'id'		=> $prefix.'gallery-events',
+					'required'	=> true
 				),
 				array(
 					'type' => 'divider'
@@ -343,7 +353,7 @@
 				array(
 					'name'		=> 'Entrée du planning',
 					'type'		=> 'textarea',
-					'id'		=> $prefix.'planning',
+					'id'		=> $prefix.'planning-events',
 					'required'	=> true,
 					'clone'		=> true,
 				)
@@ -357,8 +367,8 @@
 				array(
 					'name'			=> 'type de conseil',
 					'desc'			=> "Sélectionner le type de conseil approprié",
-					'type'			=> 'select',
-					'id'			=> $prefix.'type_conseil',
+					'type'			=> 'select_advanced',
+					'id'			=> $prefix.'type-conseil',
 					'placeholder'	=> 'Sélectionner un conseil',
 					'options'		=> array('Conseil des membres', 'Conseil d\'administration', 'Conseil académique'),
 					'required'		=> true
@@ -370,9 +380,8 @@
 					'name'		=> 'PDF',
 					'desc'		=> "Lier le ou les fichier(s) PDF correspondant à la réunion tenue",
 					'type'		=> 'file_advanced',
-					'id'		=> $prefix.'archive',
+					'id'		=> $prefix.'archive-conseil',
 					'required'	=> true,
-					'clone'		=> true
 				)
 			)
 		);

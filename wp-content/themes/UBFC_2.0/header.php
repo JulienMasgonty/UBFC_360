@@ -73,38 +73,16 @@
 			<div class="sub-nav-list">
 				<div class="container">
 					<nav id="ubfc" class="sub-nav">
-						<ul>
-							<li><a href="">Présentation</a></li>
-							<li><a href="">Le président et son équipe</a></li>
-							<li><a href="">Conseil d'administration</a></li>
-							<li><a href="">Conseil académique</a></li>
-							<li><a href="">Conseil des membres</a></li>
-							<li><a href="">Venir en Bourgogne Franche-Comté</a></li>
-							<li><a href="">Actualités</a></li>
-							<li><a href="">Événements</a></li>
-						</ul>
+						<?php wp_nav_menu(array('menu' => 'UBFC', 'container' => false)); ?>
 					</nav>
 					<nav id="recherche" class="sub-nav">
-						<ul>
-							<li><a href="">Équipes de recherche</a></li>
-							<li><a href="">Partenaires de recherche</a></li>
-							<li><a href="">Master internationaux</a></li>
-							<li><a href="">Établissements</a></li>
-							<li><a href="">Culture Scientifique</a></li>
-						</ul>
+						<?php wp_nav_menu(array('menu' => 'recherche-et-formation', 'container' => false)); ?>
 					</nav>
 					<nav id="international" class="sub-nav">
-						<ul>
-							<li><a href="">Partir à l'étranger</a></li>
-							<li><a href="">Venir en Bourgogne Franche-Comté</a></li>
-						</ul>
+						<?php wp_nav_menu(array('menu' => 'international', 'container' => false)); ?>
 					</nav>
 					<nav id="etudiant" class="sub-nav">
-						<ul>
-							<li><a href="">Schéma directeur de la vie étudiante</a></li>
-							<li><a href="">Carte européenne</a></li>
-							<li><a href="">Mon campus</a></li>
-						</ul>
+						<?php wp_nav_menu(array('menu' => 'vie-etudiante', 'container' => false)); ?>
 					</nav>
 				</div>
 			</div>

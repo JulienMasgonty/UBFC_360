@@ -28,6 +28,27 @@
 		<article class="actualites">
 			<h2 class="green">Actualités<a class="green" href="">- Voir tout</a></h2>
 			<ul class="list-actus">
+
+				<!-- AUTOMATISATION DE LA BOUCLE :D -->
+				<?php /*
+					$args = array(
+						'post-type'		=> 'actus',
+						'post_per_page'	=> '4',
+						'order'			=> 'DESC'
+					);
+					$query = new WP_query($args);
+				?>
+				<?php while($query->have_posts()):$query->the_post() ?>
+					<li>
+						<a href="<?php the_permalink(); ?>">
+							<div class="text">
+								<h3><?php the_title(); ?></h3>
+								<p><?php the_excerpt(); ?></p>
+							</div>
+						</a>
+					</li>
+				<?php endwhile; */ ?>
+
 				<li>
 					<a href="">
 						<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/random1.jpg" alt="generic picture" class="vignette">
@@ -73,6 +94,27 @@
 		--><article class="evenements">
 			<h2 class="green">Événements<a class="green" href="">- Voir tout</a></h2>
 			<ul class="list-events">
+
+				<!-- AUTOMATISATION DE LA BOUCLE :D -->
+				<?php /*
+					$args = array(
+						'post-type'		=> 'events',
+						'post_per_page'	=> '4',
+						'order'			=> 'DESC'
+					);
+					$query = new WP_query($args);
+				?>
+				<?php while($query->have_posts()):$query->the_post() ?>
+					<li>
+						<a href="<?php the_permalink(); ?>">
+							<div><!-- TRAITEMENT A FAIRE POUR LA DATE --></div>
+							<div class="text">
+								<h3><?php the_title(); ?></h3>
+								<p><?php the_excerpt(); ?></p>
+							</div>
+						</a>
+					</li>
+				<?php endwhile; */ ?>
 				<li>
 					<a href="">
 						<div class="date">20 <span class="month">Mar</span></div>
