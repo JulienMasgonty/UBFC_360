@@ -44,7 +44,7 @@
 				<div class="liste-nav">
 					<div class="container">
 						<div class="block-nav accueil">
-							<span class="titre"><span class="txt">Accueil<i class="down ion-arrow-right-b"></i></span></span>
+							<a class="titre" href="<?php echo esc_url(home_url()); ?>"><span class="txt">Accueil<i class="down ion-arrow-right-b"></i></span></a>
 						</div><!--
 						--><div class="block-nav ubfc dropdown">
 							<span class="titre"><span class="txt"><i class="left ion-arrow-left-b"></i>Ubfc<i class="down ion-arrow-down-b"></i></span></span>
@@ -53,13 +53,13 @@
 							<span class="titre"><span class="txt"><i class="left ion-arrow-left-b"></i>Recherche & Formation<i class="down ion-arrow-down-b"></i></span></span>
 						</div><!--
 						--><div class="block-nav doctorale">
-							<span class="titre"><span class="txt">Écoles Doctorales<i class="down ion-arrow-right-b"></i></span></span>
+							<a class="titre" href="<?php get_page_by_title('Écoles doctorales'); ?>"><span class="txt">Écoles Doctorales<i class="down ion-arrow-right-b"></i></span></a>
 						</div><!--
 						--><div class="block-nav isite">
-							<span class="titre"><span class="txt">ISITE BFC<i class="down ion-arrow-right-b"></i></span></span>
+							<a class="titre" href="<?php echo esc_url(home_url()); ?>"><span class="txt">ISITE BFC<i class="down ion-arrow-right-b"></i></span></a>
 						</div><!--
 						--><div class="block-nav pepite">
-							<span class="titre"><span class="txt">Entreprenariat Étudiant - PEPITE<i class="down ion-arrow-right-b"></i></span></span>
+							<a class="titre" href="<?php echo esc_url(home_url()); ?>"><span class="txt">Entreprenariat Étudiant - PEPITE<i class="down ion-arrow-right-b"></i></span></a>
 						</div><!--
 						--><div class="block-nav international dropdown">
 							<span class="titre"><span class="txt"><i class="left ion-arrow-left-b"></i>International<i class="down ion-arrow-down-b"></i></span></span>

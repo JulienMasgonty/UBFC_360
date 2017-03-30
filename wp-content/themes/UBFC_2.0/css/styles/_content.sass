@@ -183,6 +183,17 @@ main
 							width: 98px
 							margin-right: 5px
 
+						.vignette
+							overflow: hidden
+							position: relative
+
+							img
+								width: 100%
+								height: auto
+								position: absolute
+								top: 50%
+								+transform(translateY(-50%))
+
 						.date 
 							background-color: $green
 							color: $white

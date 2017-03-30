@@ -354,7 +354,7 @@
 					'name'		=> 'Entrée du planning',
 					'type'		=> 'textarea',
 					'id'		=> $prefix.'planning-events',
-					'required'	=> true,
+					'required'	=> false,
 					'clone'		=> true,
 				)
 			)
