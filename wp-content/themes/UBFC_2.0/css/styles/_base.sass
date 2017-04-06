@@ -63,6 +63,8 @@ h2:not(.block-title)
 		bottom: -3px
 		left: -15px
 		vertical-align: bottom
+		background:
+			color: lighten($gray, 45%)
 		
 	&.green
 		&:after
@@ -86,3 +88,50 @@ h2:not(.block-title)
 		&:after
 			background:
 				color: $orange
+
+	&.gray 
+		&:after
+			background:
+				color: $gray
+
+	&.lightblue 
+		&:after
+			background:
+				color: $lightblue
+
+// NEEDS THE PARENT TO BE RELATIVE
+.colors-bar
+	width: 100%
+	position: absolute
+	left: 0
+	height: 2px
+
+	&.top
+		top: 0
+
+	&.bottom
+		bottom: 0
+	
+	div 
+		width: 16.66667%
+		height: 2px
+		display: inline-block
+		vertical-align: top
+
+		&.blue
+			background: $blue
+
+		&.lightblue
+			background: $lightblue
+
+		&.orange
+			background: $orange
+
+		&.green
+			background: $green
+
+		&.purple
+			background: $purple
+
+		&.gray
+			background: $gray

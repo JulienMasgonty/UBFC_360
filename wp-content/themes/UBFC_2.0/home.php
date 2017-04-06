@@ -26,7 +26,7 @@
 			</div>
 		</div>
 		<article class="actualites">
-			<h2 class="green">Actualités<a class="green" href="<?php get_page_by_title('Actualités'); ?>">- Voir tout</a></h2>
+			<h2 class="green">Actualités<a class="green" href="<?php echo get_page_by_title('Actualités')->guid; ?>">- Voir tout</a></h2>
 			<ul class="list-actus">
 				<?php 
 					$args = array(
@@ -71,7 +71,7 @@
 			</ul>
 		</article><!--
 		--><article class="evenements">
-			<h2 class="green">Événements<a class="green" href="<?php get_page_by_title('Évènements'); ?>">- Voir tout</a></h2>
+			<h2 class="green">Événements<a class="green" href="<?php echo get_page_by_title('Évènements')->guid; ?>">- Voir tout</a></h2>
 			<ul class="list-events">
 
 				<?php 

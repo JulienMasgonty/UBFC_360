@@ -280,7 +280,7 @@
 		);
 
 		$meta_boxes[] = array(
-			'title'		=> 'Gallerie',
+			'title'		=> 'Infos',
 			'pages' 	=> array('actus'),
 			'fields'	=> array(
 				array(
@@ -291,13 +291,23 @@
 					'desc'		=> "L'image principale est celle qui sera affichée en haut de l'article. Elle servira également de vignette."
 				),
 				array(
-					'type' => 'divider'
+					'type' 	=> 'divider'
 				),
 				array(
 					'name'		=> 'Gallerie',
 					'type'		=> 'image_advanced',
 					'id'		=> $prefix.'gallery-actus',
 					'required'	=> true
+				),
+				array(
+					'type'	=> 'divider'
+				),
+				array(
+					'name'			=> 'Lieu',
+					'type'			=> 'select_advanced',
+					'placeholder'	=> 'Sélectionner une université',
+					'options'		=> array('UFC', 'uB', 'UTBM', 'ENSEMM', 'AgroSup', 'BSB'),
+					'id'			=> $prefix.'lieu-actus'
 				)
 			)
 		);
