@@ -322,6 +322,43 @@ main.listing-page
 		&.liste-actus
 			text-align: left
 			background-color: $lightgray
+			padding-top: 40px
+
+			.filters
+				padding-bottom: 20px
+
+				ul 
+					list-style: none
+					text-align: center
+					position: relative
+
+					li 
+						display: inline-block
+						padding: 10px
+						padding-right: 0
+
+						&:not(:last-of-type)
+							&:after
+								content: '|'
+								padding-left: 10px
+
+						&:hover
+							cursor: pointer
+
+							&:after
+								color: $gray
+
+					.bar 
+						display: block
+						height: 3px
+						width: 50px
+						position: absolute
+						vertical-align: top
+						left: 0
+						bottom: 0
+						+transition(100ms)
+						background:
+							color: $white
 
 			.elm 
 				text-align: left
@@ -331,8 +368,14 @@ main.listing-page
 				display: inline-block
 				position: relative
 				overflow: hidden
+				display: none
 				background:
 					color: $white
+				background:
+					color: attr(data-color)
+
+				&.active 
+					display: inline-block
 
 				&:after
 					content: ''
@@ -368,12 +411,12 @@ main.listing-page
 						height: 150px
 						width: 150px
 						display: inline-block
-						background-color: $green
+						background-color: lighten($gray, 25%)
 						position: relative
 
 						.date 
 							color: $white
-							font-size: 40px
+							font-size: 50px
 							text-align: center
 							padding-right: 0
 							+transition(100ms)
@@ -383,10 +426,11 @@ main.listing-page
 							top: 50%
 							+transform(translateY(-50%))
 							vertical-align: top
+							margin-top: -10px
 
 							.month	
 								display: block
-								font-size: 18px
+								font-size: 28px
 								line-height: 6px
 								text-transform: uppercase
 
@@ -419,29 +463,5 @@ main.listing-page
 							border-bottom: 1px solid darken($lightgray, 15%)
 							padding-bottom: 10px
 							margin-bottom: 10px
-
-				&.ufc 
-					&:after
-						border-bottom: 10px solid $green
-
-				&.ub 
-					&:after
-						border-bottom: 10px solid $orange
-
-				&.utbm 
-					&:after
-						border-bottom: 10px solid $blue
-
-				&.ensemm 
-					&:after
-						border-bottom: 10px solid $lightblue
-
-				&.agrosup 
-					&:after
-						border-bottom: 10px solid $gray
-
-				&.bsb 
-					&:after
-						border-bottom: 10px solid $purple
 
 

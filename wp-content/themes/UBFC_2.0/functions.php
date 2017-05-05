@@ -180,7 +180,7 @@
 				'menu_icon' 	=> 'dashicons-admin-multisite',
 				'public' 		=> true,
 				'has_archive' 	=> true,
-				'supports' 		=> array('title', 'editor', 'excerpt', 'thumbnail', 'revisions')
+				'supports' 		=> array('title', 'revisions')
 			)
 		);
 
@@ -231,7 +231,7 @@
 
 		// Décommenter cette ligne si les modifications sur les custom posts types ne sont pas prises en compte 
 		// flush_rewrite_rules(false);
-	} 
+	}
 
 	/**
 	 * Déclaration des métabox : champs custom afin de compléter l'administration wordpress
@@ -301,13 +301,37 @@
 				),
 				array(
 					'type'	=> 'divider'
+				)
+			)
+		);
+
+		$meta_boxes[] = array(
+			'title'		=> 'Détails de l\'Établissement',
+			'pages'		=> array('etablissement'),
+			'fields'	=> array(
+				array(
+					'name'		=> 'Sigle',
+					'type'		=> 'text',
+					'id'		=> $prefix.'sigle-etablissement',
+					'required'	=> true
 				),
 				array(
-					'name'			=> 'Lieu',
-					'type'			=> 'select_advanced',
-					'placeholder'	=> 'Sélectionner une université',
-					'options'		=> array('UFC', 'uB', 'UTBM', 'ENSEMM', 'AgroSup', 'BSB'),
-					'id'			=> $prefix.'lieu-actus'
+					'type'		=> 'divider'
+				),
+				array(
+					'name'		=> 'Logo',
+					'type'		=> 'image_advanced',
+					'id'		=> $prefix.'logo-etablissement',
+					'required'	=> true
+				),
+				array(
+					'type'		=> 'divider'
+				),
+				array(
+					'name'		=> 'Couleur représentative',
+					'type'		=> 'color',
+					'id'		=> $prefix.'col-etablissement',
+					'required'	=> true
 				)
 			)
 		);

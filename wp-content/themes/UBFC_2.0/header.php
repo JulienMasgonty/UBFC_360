@@ -53,7 +53,7 @@
 							<span class="titre"><span class="txt"><i class="left ion-arrow-left-b"></i>Recherche & Formation<i class="down ion-arrow-down-b"></i></span></span>
 						</div><!--
 						--><div class="block-nav doctorale">
-							<a class="titre" href="<?php get_page_by_title('Écoles doctorales'); ?>"><span class="txt">Écoles Doctorales<i class="down ion-arrow-right-b"></i></span></a>
+							<a class="titre" href="<?php get_page_by_title('Écoles doctorales'); ?>"><span class="txt">Doctorat<i class="down ion-arrow-right-b"></i></span></a>
 						</div><!--
 						--><div class="block-nav isite">
 							<a class="titre" href="<?php echo esc_url(home_url()); ?>"><span class="txt">ISITE BFC<i class="down ion-arrow-right-b"></i></span></a>

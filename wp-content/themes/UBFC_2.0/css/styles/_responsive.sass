@@ -270,7 +270,7 @@
 								display: none
 
 							.vignette, .text
-							display: block
+								display: block
 
 							.date
 								width: 100%
@@ -281,6 +281,45 @@
 
 		.newsletter
 			padding: 15px
+
+		&.listing-page
+			.content 
+				padding: 15px
+
+			> section
+				&.liste-actus, .liste-events
+					padding: 15px 
+
+					.filters 
+						ul 
+							.bar 
+								display: none
+
+							li 
+								display: inline-block 
+								background-color: $white
+								border-radius: 5px
+								margin: 5px
+								padding: 10px
+
+								&:after
+									display: none
+
+					.elm 
+						width: calc(100% - 30px) //margin à 15px
+						height: auto 
+
+						> div
+							.container-img, .plus
+								width: 100%
+								height: 200px
+
+							.container-img 
+								display: block 
+
+							.desc 
+								width: 100%
+
 
 	footer
 		.foot-contact
@@ -379,7 +418,7 @@
 								display: none
 
 							.vignette, .text
-							display: block
+								display: block
 
 							.date
 								width: 100%
