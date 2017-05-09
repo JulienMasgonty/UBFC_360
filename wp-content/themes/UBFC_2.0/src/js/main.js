@@ -127,12 +127,15 @@
 		var bar = $('.filters .bar'),
 			conteneur = $('.filters ul'),
 			li = $('.filters li'),
-			liDefault = $('.filters #all'),
-			current = liDefault.attr('id'),
-			width = liDefault.width(),
-			posx = liDefault.position().left,
-			posx = posx+'px',
-			color = white;
+			liDefault = $('.filters #all');
+
+		if (bar[0] != undefined && li[0] != undefined && liDefault[0] != undefined) {
+			var	current = liDefault.attr('id'),
+				width = liDefault.width(),
+				posx = liDefault.position().left,
+				posx = posx+'px',
+				color = white;
+		}
 
 		bar.css({'left': posx, 'width': width, 'color': color});
 
