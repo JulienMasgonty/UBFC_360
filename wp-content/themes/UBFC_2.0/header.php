@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr"> <!-- à prévoir : changement auto de l'attribut lang en fonction de la langue choisie -->
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width= device-width, initial-scale= 1.0, shrink-to-fit= no, minimum-scale=1.0, user-scalable=no">
@@ -52,8 +52,8 @@
 						--><div class="block-nav recherche dropdown">
 							<span class="titre"><span class="txt"><i class="left ion-arrow-left-b"></i>Recherche & Formation<i class="down ion-arrow-down-b"></i></span></span>
 						</div><!--
-						--><div class="block-nav doctorale">
-							<a class="titre" href="<?php get_page_by_title('Écoles doctorales'); ?>"><span class="txt">Doctorat<i class="down ion-arrow-right-b"></i></span></a>
+						--><div class="block-nav doctorat dropdown">
+							<span class="titre"><span class="txt"><i class="left ion-arrow-left-b"></i>Doctorat<i class="down ion-arrow-down-b"></i></span></span>
 						</div><!--
 						--><div class="block-nav isite">
 							<a class="titre" href="<?php echo esc_url(home_url()); ?>"><span class="txt">ISITE BFC<i class="down ion-arrow-right-b"></i></span></a>
@@ -77,6 +77,9 @@
 					</nav>
 					<nav id="recherche" class="sub-nav">
 						<?php wp_nav_menu(array('menu' => 'recherche-et-formation', 'container' => false)); ?>
+					</nav>
+					<nav id="doctorat" class="sub-nav">
+						<?php wp_nav_menu(array('menu' => 'doctorat', 'container' => false)); ?>
 					</nav>
 					<nav id="international" class="sub-nav">
 						<?php wp_nav_menu(array('menu' => 'international', 'container' => false)); ?>

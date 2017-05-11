@@ -208,6 +208,7 @@ main
 							text-align: center
 							padding-right: 0
 							+transition(100ms)
+							line-height: 55px
 
 							.month	
 								display: block
@@ -420,6 +421,7 @@ main.listing-page
 						display: inline-block
 						background-color: lighten($gray, 25%)
 						position: relative
+						line-height: 75px
 
 						.date 
 							color: $white
@@ -481,17 +483,50 @@ main
 		font-size: 3.2rem
 		position: relative
 
+	.container-content
+		background: darken($white, 1%)
+		padding: 80px
+
 	section.content 
 		padding: 80px
 		background: $white
-		line-height: 22px
+		text-align: justify
+		margin: auto
+		border: 1px solid darken($white, 7%)
 
 		ul 
 			padding-left: 40px
-			margin: 15px 0
 
-		p 
-			margin: 15px 0
+		p, ul 
+			margin: 25px 0
+			word-break: break-word // pour chrome
+			+prefixes(hyphens, auto) // gestion des césures
 
-		/* img 
-			margin: 15pxpx auto */
+		img 
+			margin: 20px 0
+
+		h2 
+			padding-left: 12px 
+
+			&:after
+				display: none // on reset le style des titres
+
+			&:before
+				content: ''
+				width: 5px
+				height: calc(100% + 7px)
+				position: absolute
+				top: -3px
+				left: 0px 
+				background: $graybold
+				vertical-align: top
+
+		h3
+			font-size: 22px
+
+		a 
+			color: $col-link
+			font-weight: bold
+
+			&:hover 
+				text-decoration: underline

@@ -11,6 +11,7 @@ body
 	font-size: 1.4rem
 	font-family: 'Open Sans', sans-serif
 	color: darken($gray, 5%)
+	line-height: 24px
 	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAOElEQVQoU2P8////f0ZGRkYGPAAsSUgh3AR8ClGswaUQwy3YFGJ1MLpCnL5CVojX6zCFeBXBggcAcp0kBsFGkl8AAAAASUVORK5CYII=) repeat
 	background:
 		color: $lightgray
@@ -48,6 +49,9 @@ a
 h1, h2, h3, h4
 	font-family: "polly", sans-serif
 
+h1
+	line-height: 44px
+
 h2:not(.block-title)
 	font-size: 3rem
 	color: darken($gray, 5%)
@@ -60,7 +64,7 @@ h2:not(.block-title)
 		height: 3px
 		width: 70px
 		position: absolute
-		bottom: -3px
+		bottom: -10px
 		left: -15px
 		vertical-align: bottom
 		background:
@@ -135,3 +139,6 @@ h2:not(.block-title)
 
 		&.gray
 			background: $gray
+
+strong 
+	color: $graybold

@@ -1,5 +1,6 @@
 /**
- * @param (string) : valeur de la propriété transform - Ex : translate(-50%) rotateZ(45deg)
+ * @value (string) : valeur de la propriété transform 
+ * Ex : +transform(translate(-50%) rotateZ(45deg))
  */
 @mixin transform($value)
 	-moz-transform: #{$value}
@@ -9,7 +10,8 @@
 	transform: #{$value}
 
 /**
- * @param (string) : valeur en milisecondes du temps de la transition - Ex : 100ms
+ * @value (string) : valeur en milisecondes du temps de la transition
+ * Ex : +transition(100ms)
  */
 @mixin transition($value)
 	-o-transition: all linear #{$value}
@@ -17,3 +19,15 @@
 	-moz-transition: all linear #{$value}
 	-webkit-transition: all linear #{$value}
 	transition: all linear #{$value}
+
+/**
+ * @property (string) : nom de la propriété à préfixer
+ * @value (string) : valeur de cette propriété
+ * Ex : +prefixes(transform, translate(-50%))
+ */
+@mixin prefixes($property, $value)
+	-o-#{$property}: #{$value}
+	-ms-#{$property}: #{$value}
+	-moz-#{$property}: #{$value}
+	-webkit-#{$property}: #{$value}
+	-#{$property}: #{$value}
