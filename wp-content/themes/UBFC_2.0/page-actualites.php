@@ -6,6 +6,7 @@
 		<section class="content">	
 			<?php the_content(); ?>	
 			<div class="colors-bar bottom">
+				<!-- Affichage d'une bande de couleur pour chaque établissement - ajout de commentaires pour supprimer les espaces blans -->
 				<?php 
 					$args = array(
 						'post_type' 	=> 'etablissement',
@@ -13,11 +14,8 @@
 						'numberposts' 	=> -1
 					);
 					$listEtab = get_posts($args);
-/*					var_dump(count($listEtab));die();
-*/					for($i=0; $i <= (count($listEtab)); $i++):
-						/*echo $listEtab[$i]->ID;*/
+					for($i=0; $i <= (count($listEtab)); $i++):
 						$custom_fields = get_post_custom($listEtab[$i]->ID); 
-						/*var_dump($custom_fields);die();*/
 						if($i == 0): ?>
 							<div class="bar" style="width: calc(100% / <?php echo count($listEtab) ?>); background-color: <?php echo $custom_fields['col-etablissement'][0]?>;"></div><!--
 						<?php endif ?>
@@ -81,7 +79,7 @@
 							<p>
 								<?php 
 									$content = strip_tags(get_the_content());
-									$max_length = 180;
+									$max_length = 150;
 									if (strlen($content)>$max_length) {    
 										// Séléction du maximum de caractères
 										$content = substr($content, 0, $max_length);
