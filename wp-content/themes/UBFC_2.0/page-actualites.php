@@ -6,19 +6,35 @@
 		<section class="content">	
 			<?php the_content(); ?>	
 			<div class="colors-bar bottom">
-				<div class="blue"></div><!--
-				--><div class="orange"></div><!--
-				--><div class="green"></div><!--
-				--><div class="lightblue"></div><!--
-				--><div class="gray"></div><!--
-				--><div class="purple"></div>
+				<?php 
+					$args = array(
+						'post_type' 	=> 'etablissement',
+						'order' 		=> 'ASC',
+						'numberposts' 	=> -1
+					);
+					$listEtab = get_posts($args);
+/*					var_dump(count($listEtab));die();
+*/					for($i=0; $i <= (count($listEtab)); $i++):
+						/*echo $listEtab[$i]->ID;*/
+						$custom_fields = get_post_custom($listEtab[$i]->ID); 
+						/*var_dump($custom_fields);die();*/
+						if($i == 0): ?>
+							<div class="bar" style="width: calc(100% / <?php echo count($listEtab) ?>); background-color: <?php echo $custom_fields['col-etablissement'][0]?>;"></div><!--
+						<?php endif ?>
+						<?php if($i < count($listEtab)-1 && $i != 0): ?>
+							--><div class="bar" style="width: calc(100% / <?php echo count($listEtab) ?>); background-color: <?php echo $custom_fields['col-etablissement'][0]?>;"></div><!--
+						<?php endif ?>
+						<?php if($i == count($listEtab)-1): ?>
+							--><div class="bar" style="width: calc(100% / <?php echo count($listEtab) ?>); background-color: <?php echo $custom_fields['col-etablissement'][0]?>;"></div>
+						<?php endif ?>
+					<?php endfor?>
 			</div>		
 		</section>
 	<?php endwhile; ?>
 		<section class="liste-actus">
 			<nav class="filters">
 				<ul>
-					<li id="all" data-color="#fff">Tout</li>
+					<li id="all" data-color="#fff">Tout</li> 
 					<?php 
 						$args = array(
 							'post_type' => 'etablissement',

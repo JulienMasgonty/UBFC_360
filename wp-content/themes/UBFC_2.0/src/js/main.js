@@ -160,11 +160,11 @@
 		});
 
 		// Centrer les images de contenu (vu que wordpress le fait pas automatiquement...)
+		// ==============================================================
 		var imgC = $('img.aligncenter');
 		
 		imgC.each(function() {
 			$(this).parent('p').css({'text-align': 'center'});
-		})
-
+		});
 	});
 })();
