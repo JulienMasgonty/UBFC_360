@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main>
+<main class="generic-page">
 	<?php while(have_posts()):the_post(); ?>
 		<h1><?php the_title(); ?></h1>
 		<div class="container-content">

@@ -82,7 +82,6 @@
 				} else {
 					$('.logo-nav').removeClass('visible');
 				}
-
 			});
 		} else if($('body').attr('class').indexOf('home') == -1) {
 			$('.logo-nav').addClass('visible');
@@ -161,10 +160,15 @@
 
 		// Centrer les images de contenu (vu que wordpress le fait pas automatiquement...)
 		// ==============================================================
-		var imgC = $('img.aligncenter');
+		var imgC = $('.generic-page img, .generic-page iframe, .generic-page .aligncenter');
 		
 		imgC.each(function() {
 			$(this).parent('p').css({'text-align': 'center'});
 		});
+
+		// Gestion du système d'onglets dans les pages 
+		// ==============================================================
+		// est-ce qu'on le fait vraiment ??
+		// comment ? Meta box group ? Autre ?
 	});
 })();

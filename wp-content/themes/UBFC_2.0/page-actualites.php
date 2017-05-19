@@ -66,6 +66,7 @@
 					$color = get_post_meta($postCustom->ID, 'col-etablissement', true);
 				?>
 				<a class="<?php echo 'elm '.$etablissement.' active' ?>" href="<?php the_permalink(); ?>">
+				<!-- affichage de la couleur liée à l'établissement -->
 				<style>
 					.elm.<?php echo $etablissement ?>:after { border-bottom: 10px solid <?php echo $color ?> !important; }
 				</style>
@@ -77,16 +78,14 @@
 						<div class="desc">
 							<h3><?php the_title(); ?></h3>
 							<p>
+								<!-- tronquage du texte -->
 								<?php 
 									$content = strip_tags(get_the_content());
 									$max_length = 150;
 									if (strlen($content)>$max_length) {    
-										// Séléction du maximum de caractères
 										$content = substr($content, 0, $max_length);
-										// Récupération de la position du dernier espace (afin déviter de tronquer un mot)
 										$position_espace = strrpos($content, " ");    
 										$content = substr($content, 0, $position_espace);    
-										// Ajout des "..."
 										$content = $content."...";
 									}
 									echo "$content";
@@ -96,7 +95,7 @@
 					</div>
 				</a>
 			<?php endwhile; ?>
-			<div class="message"></div>
+			<div class="message"><!-- Affichage de messages d'erreur pour le listing --></div>
 		</section>
 </main>
 
