@@ -74,6 +74,28 @@
 			)
 		);
 
+		register_post_type('actus-doctorat',
+			array(
+				'label'		=> 'Actualités doctorale',
+				'labels'	=> array(
+					'name' 					=> 'Actualités doctorales',
+					'singular_name' 		=> 'Actualité doctorale',
+					'all_items' 			=> 'Toutes les Actualités doctorales',
+					'add_new_item' 			=> 'Ajouter une actualité doctorale',
+					'edit_item' 			=> 'Modifier l\'actualité doctorale',
+					'new_item' 				=> 'Nouvelle actualité doctorale',
+					'view_itme' 			=> 'voir l\'actualité doctorale',
+					'search_item' 			=> 'Rechercher parmis les actualités doctorales',
+					'not_found' 			=> 'Pas d\'actualité trouvée doctorale',
+					'not_found_in_trash' 	=> 'Pas d\'actualité doctorale trouvée dans la corbeille'
+				),
+				'menu_icon'		=> 'dashicons-welcome-write-blog',
+				'public'		=> true,
+				'has_archive'	=> true,
+				'supports'		=> array('title')
+			)
+		);
+
 		register_post_type('events',
 			array(
 				'label' 		=> 'Évènements',
@@ -275,6 +297,26 @@
 					'options' 		=> array('Président et son équipe', 'Conseil Académique', 'Conseil d\'administration', 'Conseil des membres'),
 					'id' 			=> $prefix.'appartenance-personnel',
 					'required' 		=> true
+				)
+			)
+		);
+
+		$meta_boxes[] = array(
+			'title'		=> 'infos',
+			'pages'		=> array('actus-doctorat'),
+			'fields'	=> array(
+				array(
+					'name'		=> 'Date',
+					'type'		=> 'date',
+					'id'		=> $prefix.'date-actu-doct',
+					'required'	=> true,
+					'desc'		=> 'Date de l\'évènement'
+				),
+				array(
+					'name'		=> 'Actualité',
+					'type'		=> 'text',
+					'id'		=> $prefix.'content-actu-doct',
+					'required'	=> true
 				)
 			)
 		);

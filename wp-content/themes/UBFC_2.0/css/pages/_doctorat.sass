@@ -1,0 +1,79 @@
+main.doctorat
+	.secondary 
+		width: 80%
+		margin: auto 
+		position: relative
+
+		.hotkeys
+			width: 60%
+			display: inline-block
+			padding: 30px
+			vertical-align: top
+			position: absolute
+			vertical-align: top
+			top: 50%
+			+transform(translateY(-50%))
+
+			.elm
+				display: inline-block
+				width: calc(33% - 40px)
+				height: 100px
+				background: darken($lightgray, 10%)
+				margin: 20px
+				vertical-align: top
+				text-align: center
+				color: $gray
+				position: relative
+				+transition(100ms)
+
+				span 
+					position: absolute
+					width: 100%
+					height: auto
+					left: 0
+					vertical-align: top
+					top: 50%
+					+transform(translateY(-50%))
+					padding: 20px
+
+				&:hover
+					cursor: pointer
+					background: darken($lightgray, 5%)
+
+		.actus-doctorat
+			width: 40%
+			display: inline-block
+			vertical-align: top
+			padding: 30px
+
+			.content 
+				margin: 20px 
+				background: darken($lightgray, 10%)
+				background: $white
+				height: 320px
+				padding: 20px
+				overflow: auto
+
+				h4
+					width: 60%
+					margin: auto
+					text-align: center
+					padding: 10px
+					border-bottom: 1px solid $gray
+					margin-bottom: 20px
+
+				ul 
+					list-style: none
+
+					li 
+						margin: 10px 0
+
+						span 
+							display: inline-block
+							vertical-align: top
+
+							&.date 
+								width: 100px
+
+							&.contenu
+								width: calc(100% - 100px)

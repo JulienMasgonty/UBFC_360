@@ -1,0 +1,181 @@
+// PAGES DE LISTING : ACTUS, EVENTS
+// =================================================================
+
+main.listing-page 
+	padding-top: 0
+
+	h1
+		padding: 60px
+		text-align: center
+		font-size: 3.2rem
+		position: relative
+
+		&:after
+			content: ''
+			display: block
+			height: 3px
+			width: 70px
+			background: $gray
+			position: absolute
+			left: 50%
+			bottom: 45px 
+			+transform(translateX(-50%))
+
+	> section
+		padding: 80px
+
+		&.content
+			position: relative
+			background:
+				color: $white
+
+			h2
+				font-size: 2.2rem
+				position: relative
+				padding-left: 12px
+
+		&.liste-actus
+			text-align: left
+			background-color: $lightgray
+			padding-top: 40px
+
+			.filters
+				padding-bottom: 20px
+
+				ul 
+					list-style: none
+					text-align: center
+					position: relative
+
+					li 
+						display: inline-block
+						padding: 10px
+						padding-right: 0
+
+						&:not(:last-of-type)
+							&:after
+								content: '|'
+								padding-left: 10px
+
+						&:hover
+							cursor: pointer
+
+							&:after
+								color: $gray
+
+					.bar 
+						display: block
+						height: 3px
+						width: 50px
+						position: absolute
+						vertical-align: top
+						left: 0
+						bottom: 0
+						+transition(100ms)
+						background:
+							color: $white
+
+			.elm 
+				text-align: left
+				width: calc(49% - 30px)
+				height: 150px
+				margin: 15px
+				display: inline-block
+				position: relative
+				overflow: hidden
+				display: none
+				background:
+					color: $white
+				background:
+					color: attr(data-color)
+
+				&.active 
+					display: inline-block
+
+				&:after
+					content: ''
+					display: block
+					position: absolute
+					vertical-align: top
+					bottom: -10px
+					right: -10px
+					border: 10px solid transparent
+					+transform(rotateZ(135deg))
+
+				&:hover
+					.plus 
+						opacity: 1
+
+				> div 
+					.container-img 
+						height: 150px
+						width: 150px
+						overflow: hidden
+						display: inline-block
+						position: relative
+
+						img 
+							width: 100%
+							height: auto
+							position: absolute
+							top: 50%
+							left: 50%
+							+transform(translate(-50%, -50%))
+
+					.container-date
+						height: 150px
+						width: 150px
+						display: inline-block
+						background-color: lighten($gray, 25%)
+						position: relative
+						line-height: 75px
+
+						.date 
+							color: $white
+							font-size: 50px
+							text-align: center
+							padding-right: 0
+							+transition(100ms)
+							width: 100%
+							position: absolute
+							left: 0
+							top: 50%
+							+transform(translateY(-50%))
+							vertical-align: top
+							margin-top: -10px
+
+							.month	
+								display: block
+								font-size: 28px
+								line-height: 6px
+								text-transform: uppercase
+
+
+
+					.plus
+						height: 150px
+						width: 150px
+						line-height: 150px
+						color: $white
+						font-size: 48px
+						position: absolute
+						vertical-align: top
+						top: 0
+						left: 0
+						opacity: 0
+						+transition(100ms)
+						text-align: center
+						background:
+							color: rgba($green, .2)
+
+					.desc 
+						display: inline-block
+						vertical-align: top
+						padding: 15px
+						color: $gray
+						width: calc(100% - 155px)
+
+						h3
+							border-bottom: 1px solid darken($lightgray, 15%)
+							padding-bottom: 10px
+							margin-bottom: 10px
