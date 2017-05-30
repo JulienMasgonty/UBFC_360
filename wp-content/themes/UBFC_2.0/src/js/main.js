@@ -170,5 +170,28 @@
 		// ==============================================================
 		// est-ce qu'on le fait vraiment ??
 		// comment ? Meta box group ? Autre ?
+		
+		// Gestion des Pop ups de l'accueil doctoral
+		var listElm = $('.hotkeys .elm'),
+			listPopups = $('.Popups .popUp'),
+			listClose = $('.popUp .close');
+
+		listElm.each(function() {
+			$(this).on('click', function() {
+				var id = $(this).attr('data-popup');
+				listPopups.each(function() {
+					if($(this).attr('id') == id) {
+						listPopups.removeClass('active');
+						$(this).addClass('active');
+					}
+				});
+			});
+		});
+
+		listClose.each(function() {
+			$(this).on('click', function() {
+				$(this).parents('.popUp').removeClass('active');
+			})
+		});
 	});
 })();

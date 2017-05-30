@@ -81,7 +81,42 @@
 	</aside>
 
 	<div class="Popups">
-		div.popup#ecoles
+		<div class="popUp" id="ecoles">
+			<div class="container">
+				<span class="close">Close</span>
+				tests ecoles
+			</div>
+		</div>
+		<div class="popUp" id="adum">
+			<div class="container">
+				<span class="close">Close</span>
+				tests adum
+			</div>
+		</div>
+		<div class="popUp" id="formations">
+			<div class="container">
+				<span class="close">Close</span>
+				tests form
+			</div>
+		</div>
+		<div class="popUp" id="procedures">
+			<div class="container">
+				<span class="close">Close</span>
+				tests proc
+			</div>
+		</div>
+		<div class="popUp" id="insertion">
+			<div class="container">
+				<span class="close">Close</span>
+				tests ins
+			</div>
+		</div>
+		<div class="popUp" id="contacts">
+			<div class="container">
+				<span class="close">Close</span>
+				tests contacts
+			</div>
+		</div>
 	</div>
 
 </main>
