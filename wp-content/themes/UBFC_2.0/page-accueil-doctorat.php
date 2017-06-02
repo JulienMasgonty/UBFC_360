@@ -56,12 +56,12 @@
 			</section><!--
 			--><section class="hotkeys">
 				<ul>
-					<li class="elm" data-popup="ecoles"><span>Écoles doctorales</span></li><!--
-					--><li class="elm" data-popup="adum"><span>Mon espace personnel ADUM</span></li><!--
-					--><li class="elm" data-popup="formations"><span>Catalogue de Formations transversales</span></li><!--
-					--><li class="elm" data-popup="procedures"><span>Procédures et formulaires</span></li><!--
-					--><li class="elm" data-popup="insertion"><span>Insertion professionnelle</span></li><!--
-					--><li class="elm" data-popup="contacts"><span>Contacts</span></li>
+					<li class="elm" data-color="#eeeeee" data-popup="ecoles"><span>Écoles doctorales</span></li><!--
+					--><li class="elm" data-color="#eeeeee" data-popup="adum"><span>Mon espace personnel ADUM</span></li><!--
+					--><li class="elm" data-color="#eeeeee" data-popup="formations"><span>Catalogue de Formations transversales</span></li><!--
+					--><li class="elm" data-color="#eeeeee" data-popup="procedures"><span>Procédures et formulaires</span></li><!--
+					--><li class="elm" data-color="#eeeeee" data-popup="insertion"><span>Insertion professionnelle</span></li><!--
+					--><li class="elm" data-color="#eeeeee" data-popup="contacts"><span>Contacts</span></li>
 				</ul>
 			</section>
 		</aside>
@@ -85,36 +85,42 @@
 			<div class="container">
 				<span class="close">Close</span>
 				tests ecoles
+				
 			</div>
 		</div>
 		<div class="popUp" id="adum">
 			<div class="container">
 				<span class="close">Close</span>
 				tests adum
+				
 			</div>
 		</div>
 		<div class="popUp" id="formations">
 			<div class="container">
 				<span class="close">Close</span>
 				tests form
+				
 			</div>
 		</div>
 		<div class="popUp" id="procedures">
 			<div class="container">
 				<span class="close">Close</span>
 				tests proc
+				
 			</div>
 		</div>
 		<div class="popUp" id="insertion">
 			<div class="container">
 				<span class="close">Close</span>
 				tests ins
+				
 			</div>
 		</div>
 		<div class="popUp" id="contacts">
 			<div class="container">
 				<span class="close">Close</span>
 				tests contacts
+				
 			</div>
 		</div>
 	</div>
