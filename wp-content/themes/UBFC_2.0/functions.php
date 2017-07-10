@@ -289,14 +289,6 @@
 					'type'		=> 'text',
 					'id'		=> $prefix.'fonction-personnel',
 					'required'	=> true
-				),
-				array(
-					'name' 			=> 'Appartenance',
-					'type' 			=> 'select_advanced',
-					'placeholder' 	=> 'Sélectionner un champs',
-					'options' 		=> array('Président et son équipe', 'Conseil Académique', 'Conseil d\'administration', 'Conseil des membres'),
-					'id' 			=> $prefix.'appartenance-personnel',
-					'required' 		=> true
 				)
 			)
 		);
@@ -374,6 +366,21 @@
 					'type'		=> 'color',
 					'id'		=> $prefix.'col-etablissement',
 					'required'	=> true
+				),
+				array(
+					'type'		=> 'divider'
+				),
+				array(
+					'name'		=> 'URL',
+					'type'		=> 'url',
+					'id'		=> $prefix.'link-etablissement',
+					'required'	=> true
+				),
+				array(
+					'name'		=> 'Lien vers la liste de formations',
+					'type'		=> 'url',
+					'id'		=> $prefix.'link-formations-etablissement',
+					'required'	=> true
 				)
 			)
 		);
@@ -441,6 +448,15 @@
 			'pages' 	=> array('archives'),
 			'fields'	=> array(
 				array(
+					'name'			=> 'intitulé',
+					'type'			=> 'text',
+					'id'			=> $prefix.'lib-archive',
+					'required'		=> true
+				),
+				array(
+					'type'			=> 'divider'
+				),
+				array(
 					'name'			=> 'type de conseil',
 					'desc'			=> "Sélectionner le type de conseil approprié",
 					'type'			=> 'select_advanced',
@@ -448,6 +464,15 @@
 					'placeholder'	=> 'Sélectionner un conseil',
 					'options'		=> array('Conseil des membres', 'Conseil d\'administration', 'Conseil académique'),
 					'required'		=> true
+				),
+				array(
+					'type'	=> 'divider'
+				),
+				array(
+					'name'		=> 'Ancien mandat',
+					'desc'		=> 'Uniquement si le conseil d\'Administration date de l\'ancien mandat',
+					'type'		=> 'checkbox',
+					'id'		=>$prefix.'ancien-mandat',
 				),
 				array(
 					'type'	=> 'divider'

@@ -43,7 +43,21 @@
 				});
 		}
 
-		// Gestion des sous-menu
+		$('.sub-nav li.disabled .sub-menu').slideUp('fast');
+
+		// Gestion des sous-menus de de sous-menus
+		// ==============================================================
+
+		$('.sub-nav  li.disabled').on('mouseover', function() {
+			$(this).find('.sub-menu').slideDown('250ms');
+			console.log('trigger');
+		});
+
+		$('.sub-nav li.disabled').on('mouseleave', function() {
+			$(this).find('.sub-menu').slideUp('250ms');
+		});
+
+		// Gestion des sous-menus
 		// ==============================================================
 
 		var listMenu = $('.block-nav');

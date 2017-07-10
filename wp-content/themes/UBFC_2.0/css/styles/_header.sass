@@ -297,6 +297,27 @@ header
 							&:hover
 								padding-left: 15px
 
+						&.disabled
+							a 
+								&:hover
+									padding-left: 0
+									cursor: default
+
+							.sub-menu
+								height: auto
+								padding-left: 15px
+								display: none
+
+								a 
+									font-size: 1.6rem
+
+							&:hover
+								.sub-menu
+									a 
+										&:hover
+											padding-left: 15px
+											cursor: pointer
+
 		&.active
 			+transform(translateX(0))
 

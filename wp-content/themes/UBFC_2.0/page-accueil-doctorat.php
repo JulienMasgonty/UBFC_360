@@ -83,44 +83,62 @@
 	<div class="Popups">
 		<div class="popUp" id="ecoles">
 			<div class="container">
-				<span class="close">Close</span>
-				tests ecoles
-				
+				<div class="block">
+					<div class="container">
+						<span class="close"><i class="ion-close"></i></span>
+						tests ecoles
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="popUp" id="adum">
 			<div class="container">
-				<span class="close">Close</span>
-				tests adum
-				
+				<div class="block">
+					<div class="container">
+						<span class="close"><i class="ion-close"></i></span>
+						tests adum
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="popUp" id="formations">
 			<div class="container">
-				<span class="close">Close</span>
-				tests form
-				
+				<div class="block">
+					<div class="container">
+						<span class="close"><i class="ion-close"></i></span>
+						tests form
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="popUp" id="procedures">
 			<div class="container">
-				<span class="close">Close</span>
-				tests proc
-				
+				<div class="block">
+					<div class="container">
+						<span class="close"><i class="ion-close"></i></span>
+						tests proc
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="popUp" id="insertion">
 			<div class="container">
-				<span class="close">Close</span>
-				tests ins
-				
+				<div class="block">
+					<div class="container">
+						<span class="close"><i class="ion-close"></i></span>
+						tests ins
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="popUp" id="contacts">
 			<div class="container">
-				<span class="close">Close</span>
-				tests contacts
-				
+				<div class="block">
+					<div class="container">
+						<span class="close"><i class="ion-close"></i></span>
+						tests contacts
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

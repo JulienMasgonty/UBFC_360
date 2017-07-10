@@ -18,20 +18,18 @@
 				<span class="bar"></span>
 			</div>
 			<div class="logo-nav">
-				
+
 			</div>
 			<div class="socials">
 				<ul>
-					<li><a class="fb" target="_blank" href="https://www.facebook.com/pages/Université-Bourgogne-Franche-Comté/717011205019459?fref=ts" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li><!--
-					--><li><a class="tw" target="_blank" href="https://twitter.com/univ_bfc?lang=fr" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li><!--
+					<li><a class="tw" target="_blank" href="https://twitter.com/univ_bfc?lang=fr" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li><!--
 					--><li><a class="yt" target="_blank" href="https://www.youtube.com/channel/UCE1eeKLhNl8cUHEyuEqgurw" title="youtube"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
 				</ul>
 			</div>
 			<div class="socials-mobile">
 				<i class="ion-android-share-alt"></i>
 				<ul>
-					<li><a class="fb" target="_blank" href="https://www.facebook.com/pages/Université-Bourgogne-Franche-Comté/717011205019459?fref=ts" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li><!--
-					--><li><a class="tw" target="_blank" href="https://twitter.com/univ_bfc?lang=fr" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li><!--
+					<li><a class="tw" target="_blank" href="https://twitter.com/univ_bfc?lang=fr" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li><!--
 					--><li><a class="yt" target="_blank" href="https://www.youtube.com/channel/UCE1eeKLhNl8cUHEyuEqgurw" title="youtube"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>					
 				</ul>
 			</div>
@@ -47,25 +45,41 @@
 							<a class="titre" href="<?php echo esc_url(home_url()); ?>"><span class="txt">Accueil<i class="down ion-arrow-right-b"></i></span></a>
 						</div><!--
 						--><div class="block-nav ubfc dropdown">
-							<span class="titre"><span class="txt"><i class="left ion-arrow-left-b"></i>Ubfc<i class="down ion-arrow-down-b"></i></span></span>
+							<span class="titre"><span class="txt"><i class="left ion-arrow-left-b"></i>UBFC<i class="down ion-arrow-down-b"></i></span></span>
 						</div><!--
 						--><div class="block-nav recherche dropdown">
 							<span class="titre"><span class="txt"><i class="left ion-arrow-left-b"></i>Recherche & Formation<i class="down ion-arrow-down-b"></i></span></span>
 						</div><!--
+						--><div class="block-nav master">
+							<a class="titre" href="<?php echo get_permalink(get_page_by_title('Masters internationaux')); ?>"><span class="txt">Masters internationaux<i class="down ion-arrow-right-b"></i></span></a>
+						</div><!--
 						--><div class="block-nav doctorat dropdown">
 							<span class="titre"><span class="txt"><i class="left ion-arrow-left-b"></i>Doctorat<i class="down ion-arrow-down-b"></i></span></span>
 						</div><!--
-						--><div class="block-nav isite">
-							<a class="titre" href="<?php echo esc_url(home_url()); ?>"><span class="txt">ISITE BFC<i class="down ion-arrow-right-b"></i></span></a>
+						--><div class="block-nav isite dropdown">
+							<span class="titre"><span class="txt"><i class="left ion-arrow-left-b"></i>ISITE-BFC<i class="down ion-arrow-down-b"></i></span></span>
 						</div><!--
 						--><div class="block-nav pepite">
-							<a class="titre" href="<?php echo esc_url(home_url()); ?>"><span class="txt">Entreprenariat Étudiant - PEPITE<i class="down ion-arrow-right-b"></i></span></a>
+							<a class="titre" href="<?php echo get_permalink(get_page_by_title('Entrepreneuriat étudiant - PEPITE')); ?>"><span class="txt">Entrepreneuriat Étudiant<i class="down ion-arrow-right-b"></i></span></a>
+						</div><!--
+						--><div class="block-nav etudiant dropdown">
+							<span class="titre"><span class="txt"><i class="left ion-arrow-left-b"></i>Vie Étudiante<i class="down ion-arrow-down-b"></i></span></span>
 						</div><!--
 						--><div class="block-nav international dropdown">
 							<span class="titre"><span class="txt"><i class="left ion-arrow-left-b"></i>International<i class="down ion-arrow-down-b"></i></span></span>
 						</div><!--
-						--><div class="block-nav etudiant dropdown">
-							<span class="titre"><span class="txt"><i class="left ion-arrow-left-b"></i>Vie Étudiante<i class="down ion-arrow-down-b"></i></span></span>
+						--><div class="block-nav hdr dropdown">
+							<span class="titre"><span class="txt"><i class="left ion-arrow-left-b"></i>HDR<i class="down ion-arrow-down-b"></i></span></span>
+						</div><!--
+						--><div class="block-nav services">
+								<?php 
+									$url = $_SERVER["REMOTE_ADDR"];
+									$url = explode('.', $url);
+
+									if($url[0] == '193' && $url[1] == '55' && $url[2] == '69') {
+								 ?>
+									<a class="titre" href="<?php echo get_permalink(get_page_by_title('Services')); ?>"><span class="txt">Services<i class="down ion-arrow-right-b"></i></span></a>
+								<?php } ?>
 						</div>
 					</div>
 				</div>
@@ -87,7 +101,15 @@
 					<nav id="etudiant" class="sub-nav">
 						<?php wp_nav_menu(array('menu' => 'vie-etudiante', 'container' => false)); ?>
 					</nav>
+					<nav id="hdr" class="sub-nav">
+						<?php wp_nav_menu(array('menu' => 'hdr', 'container' => false)); ?>
+					</nav>
+					<nav id="isite" class="sub-nav">
+						<?php wp_nav_menu(array('menu' => 'isite', 'container' => false)); ?>
+					</nav>
 				</div>
 			</div>
 		</nav>
 	</header>
+
+	
