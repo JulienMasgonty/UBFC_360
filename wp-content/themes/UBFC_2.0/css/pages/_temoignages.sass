@@ -1,0 +1,65 @@
+.liste-temoignages
+	text-align: center
+
+	.temoignage
+		display: inline-block
+		width: calc(32% - 40px)
+		background: $white
+		vertical-align: top
+		margin: 10px 20px
+		text-align: left
+		color: $gray
+		transition: all ease 250ms
+
+		img 
+			max-width: 100%
+
+		h3
+			margin-bottom: 20px
+
+		&:hover
+			/* box-shadow: 0 0 3px 0px #9e9e9e */
+			+transform(scale(1.02))
+
+		&.externe
+			text-align: center
+
+			.img 
+				width: 100%
+				height: 200px
+				background-size: cover
+				background-position: center center
+
+		&.texte
+			.img 
+				border-radius: 50%
+				margin: auto
+				margin-top: -15%
+				text-align: center
+				display: block
+				width: 150px
+				height: 150px
+				background-size: cover
+				background-position: center center
+
+			.txt
+				padding: 20px
+				text-align: justify
+
+@media (max-width: $md-max)
+	.liste-temoignages
+		.temoignage
+			width: calc(49% - 40px)
+
+			&.texte
+				.img
+					margin-top: 10px
+
+@media (max-width: $sm-max)
+	.liste-temoignages
+		.temoignage
+			width: calc(100% - 40px)
+
+			&.texte
+				.img
+					margin-top: 10px

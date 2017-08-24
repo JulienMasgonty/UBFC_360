@@ -1,0 +1,36 @@
+.event
+	.content
+		.img
+			text-align: center
+
+			.img-princ
+				max-height: 500px
+
+		.gallery
+			text-align: center
+			.img 
+				display: inline-block
+				width: calc(24% - 10px)
+				margin: 5px
+				height: 200px
+				background-size: cover
+				background-position: center center
+
+		.planning
+			margin-top: 40px
+
+@media (max-width: $md-max)
+	.event
+		.content
+			.gallery
+				.img 
+					width: calc(49% - 10px)
+
+@media (max-width: $sm-max)
+	.event
+		.content
+			.img 
+				.img-princ 
+					max-height: none
+					max-width: 100%
+					height: auto

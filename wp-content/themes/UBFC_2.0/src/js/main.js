@@ -103,17 +103,17 @@
 
 		// Gestion du hover des filtres (Actualités - Evenements - etc)
 		// ==============================================================
-		var bar = $('.filters .bar'),
-			conteneur = $('.filters ul'),
-			li = $('.filters li'),
-			liDefault = $('.filters #all');
+		var bar 		= $('.filters .bar'),
+			conteneur 	= $('.filters ul'),
+			li 			= $('.filters li'),
+			liDefault 	= $('.filters #all');
 
 		if (bar[0] != undefined && li[0] != undefined && liDefault[0] != undefined) {
 			var	current = liDefault.attr('id'),
-				width = liDefault.width(),
-				posx = liDefault.position().left,
-				posx = posx+'px',
-				color = white;
+				width 	= liDefault.width(),
+				posx 	= liDefault.position().left,
+				posx 	= posx+'px',
+				color 	= white;
 		}
 
 		bar.css({'left': posx, 'width': width, 'color': color});
@@ -135,9 +135,9 @@
 
 		// Gestion des filtres (actus, events, etc)
 		// ==============================================================
-		var listeTags = $('.filters li'),
-			listeElm = $('a.elm'),
-			count = 0;
+		var listeTags 	= $('.filters li'),
+			listeElm 	= $('a.elm'),
+			count 		= 0;
 
 		listeTags.each(function() {
 			$(this).on('click', function() {
@@ -179,16 +179,12 @@
 		imgC.each(function() {
 			$(this).parent('p').css({'text-align': 'center'});
 		});
-
-		// Gestion du système d'onglets dans les pages 
-		// ==============================================================
-		// est-ce qu'on le fait vraiment ??
-		// comment ? Meta box group ? Autre ?
 		
 		// Gestion des Pop ups de l'accueil doctoral
-		var listElm = $('.hotkeys .elm'),
-			listPopups = $('.Popups .popUp'),
-			listClose = $('.popUp .close');
+		// ==============================================================
+		var listElm 	= $('.hotkeys .elm'),
+			listPopups 	= $('.Popups .popUp'),
+			listClose 	= $('.popUp .close');
 
 		listElm.each(function() {
 			$(this).on('click', function() {
@@ -207,5 +203,50 @@
 				$(this).parents('.popUp').removeClass('active');
 			})
 		});
+
+		// Gestion de la navigation secondaire des pages Doctorat
+		// ==============================================================
+		var baseurl 	= $(document).location,
+			listeH2 	= $('.content h2'),
+			navContent 	= $('.container-content > .nav-content > ul');
+
+		if(listeH2.length > 2) {
+			/*for (var i = 0; i < listeH2.length ; i++) {
+				console.log('true');
+				var id 		= '#titre-'+i;
+				console.log(id);
+				var	contenu = listeH2[i].innerHTML;
+				console.log(contenu);
+				var	elm 	= '<li><a href="'+id+'">'+contenu+'</a></li>';
+				console.log(elm);
+
+				console.log(listeH2[i]);
+
+				/*listeH2[i].attr({id: id});*/
+				/*$('h2').attr('id', 'a1');
+				navContent.innerHTML += elm;
+			}*/
+			var i = 1;
+			listeH2.each(function() {
+				var id = 'titre-'+i;
+				var contenu = $(this)[0].innerHTML;
+				var	elm = '<li><a href="#'+id+'">'+contenu+'</a></li>';
+
+				$(this).attr('id', id);
+				$(this).addClass("ancre");
+				navContent.parents('.nav-content').addClass("active");
+				navContent[0].innerHTML += elm;
+
+				i++;
+			});
+
+			$(document).on('scroll', function() {
+				if ($(window).scrollTop() >= 100) {
+					navContent.parents('.nav-content').css({'top': '80px'});
+				} else {
+					navContent.parents('.nav-content').css({'top': '310px'});
+				}
+			});
+		}
 	});
 })();

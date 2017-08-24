@@ -56,12 +56,16 @@
 			</section><!--
 			--><section class="hotkeys">
 				<ul>
-					<li class="elm" data-color="#eeeeee" data-popup="ecoles"><span>Écoles doctorales</span></li><!--
-					--><li class="elm" data-color="#eeeeee" data-popup="adum"><span>Mon espace personnel ADUM</span></li><!--
-					--><li class="elm" data-color="#eeeeee" data-popup="formations"><span>Catalogue de Formations transversales</span></li><!--
-					--><li class="elm" data-color="#eeeeee" data-popup="procedures"><span>Procédures et formulaires</span></li><!--
-					--><li class="elm" data-color="#eeeeee" data-popup="insertion"><span>Insertion professionnelle</span></li><!--
-					--><li class="elm" data-color="#eeeeee" data-popup="contacts"><span>Contacts</span></li>
+					<?php 
+						$args = array(
+							'post_type'	=> 'box-doctorat',
+							'order'		=> 'ASC',
+						);
+						$query = new WP_Query($args);
+						while($query->have_posts()):$query->the_post();
+					?>
+					<li class="elm" data-color="#eeeeee" data-popup="<?php echo basename(get_permalink()); ?>"><span><?php the_title(); ?></span></li>
+				<?php endwhile ?>
 				</ul>
 			</section>
 		</aside>
@@ -81,66 +85,25 @@
 	</aside>
 
 	<div class="Popups">
-		<div class="popUp" id="ecoles">
+		<?php 
+			$args = array(
+				'post_type'	=> 'box-doctorat',
+				'order'		=> 'DESC',
+			);
+			$query = new WP_Query($args);
+			while($query->have_posts()):$query->the_post();
+		?>
+		<div class="popUp" id="<?php echo basename(get_permalink()); ?>">
 			<div class="container">
 				<div class="block">
 					<div class="container">
 						<span class="close"><i class="ion-close"></i></span>
-						tests ecoles
+						<?php echo rwmb_meta('contenu-box'); ?>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="popUp" id="adum">
-			<div class="container">
-				<div class="block">
-					<div class="container">
-						<span class="close"><i class="ion-close"></i></span>
-						tests adum
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="popUp" id="formations">
-			<div class="container">
-				<div class="block">
-					<div class="container">
-						<span class="close"><i class="ion-close"></i></span>
-						tests form
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="popUp" id="procedures">
-			<div class="container">
-				<div class="block">
-					<div class="container">
-						<span class="close"><i class="ion-close"></i></span>
-						tests proc
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="popUp" id="insertion">
-			<div class="container">
-				<div class="block">
-					<div class="container">
-						<span class="close"><i class="ion-close"></i></span>
-						tests ins
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="popUp" id="contacts">
-			<div class="container">
-				<div class="block">
-					<div class="container">
-						<span class="close"><i class="ion-close"></i></span>
-						tests contacts
-					</div>
-				</div>
-			</div>
-		</div>
+		<?php endwhile; ?>
 	</div>
 
 </main>

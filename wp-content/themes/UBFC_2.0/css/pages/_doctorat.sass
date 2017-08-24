@@ -11,7 +11,7 @@ main.doctorat
 			background: rgba(0,0,0,.7)
 			color: $gray
 			overflow: hidden
-			+transition(200ms)
+			+transition(100ms)
 			z-index: 4000
 
 			&.active
@@ -29,11 +29,29 @@ main.doctorat
 					border: 3px solid darken($lightgray, 10%) 
 					padding: 15px
 
+					.container 
+						overflow: auto
+						padding: 30px 70px
+
+						h3
+							padding: 20px 0
+
+						p 
+							padding-bottom: 15px
+							text-align: justify
+
+						a 
+							color: $col-link
+							font-weight: bold
+
+							&:hover 
+								text-decoration: underline
+
 			.close
-				position: absolute
+				position: fixed
 				vertical-align: top
-				top: 0px
-				right: 15px
+				top: 20px
+				right: 55px
 
 				&:hover
 					cursor: pointer
@@ -55,7 +73,7 @@ main.doctorat
 
 			.elm
 				display: inline-block
-				width: calc(33% - 40px)
+				width: calc(32% - 40px)
 				height: 100px
 				background: darken($lightgray, 10%)
 				margin: 20px

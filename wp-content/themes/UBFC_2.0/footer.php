@@ -17,7 +17,8 @@
 				<div class="block">
 					<i class="fa fa-phone"></i>
 					<div class="tel">
-						<p>tel : 03 63 08 26 35</p>
+						<!-- <p>tel : 03 63 08 26 35</p> -->
+						<p>tel : 03 63 08 26 50</p>
 					</div>
 				</div>
 				<div class="block">
@@ -30,18 +31,60 @@
 		</section>
 		<section class="foot-partenaires">
 			<ul>
-				<li><a target="_blank" href="http://www.u-bourgogne.fr"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo_ub.jpg" alt=""></a></li>
-				<li><a target="_blank" href="http://www.univ-fcomte.fr"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo_ufc.png" alt=""></a></li>
-				<li><a target="_blank" href="http://www.utbm.fr"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo_utbm.jpg" alt=""></a></li>
-				<li><a target="_blank" href="https://www.ens2m.fr"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo_ensmm.jpg" alt=""></a></li>
-				<li><a target="_blank" href="http://www.agrosupdijon.fr"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo_agrosup.png" alt=""></a></li>
-				<li><a target="_blank" href="https://www.bsb-education.com"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/BSB_logo_pantone690C.png" alt=""></a></li>
+				<?php 
+					$args = array(
+						'post_type'	=> 'etablissement',
+						'order'		=> 'ASC'
+					);
+					$query = new WP_Query($args);
+
+					while($query->have_posts()):$query->the_post();
+						$images = rwmb_meta('logo-etablissement', 'type=image_advanced&size=full');
+				?>
+					<li>
+						<a target="_blank" href="<?php echo rwmb_meta('link-etablissement') ?>">
+							<?php foreach ($images as $image): ?>
+								<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>">
+							<?php endforeach; ?>
+						</a>
+					</li>
+				<?php endwhile; ?>
+			</ul>
+			<ul class="princ">
+				<li><a target="_blank" href="https://www.bourgognefranchecomte.fr"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Logo-regionCMJN.png" alt="Bourgogne - Franche-Comté"></a></li>
+				<li><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logoubfcBONNE_VERSION.png" alt="Université Bourgogne Franche-Comté"></li>
 			</ul>
 		</section>
 		<section class="foot-legacy">
 			<a href="">Mentions légales</a>
 		</section>
 	</footer>
+
 	<?php wp_footer(); ?>
+
+	<script type="text/javascript">
+		//<![CDATA[
+		if (typeof newsletter_check !== "function") {
+		window.newsletter_check = function (f) {
+		    var re = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-]{1,})+\.)+([a-zA-Z0-9]{2,})+$/;
+		    if (!re.test(f.elements["ne"].value)) {
+		        alert("L'adresse email est incorrecte");
+		        return false;
+		    }
+		    for (var i=1; i<20; i++) {
+		    if (f.elements["np" + i] && f.elements["np" + i].required && f.elements["np" + i].value == "") {
+		        alert("");
+		        return false;
+		    }
+		    }
+		    if (f.elements["ny"] && !f.elements["ny"].checked) {
+		        alert("You must accept the privacy statement");
+		        return false;
+		    }
+		    return true;
+		}
+		}
+		//]]>
+	</script>
 </body>
 </html>

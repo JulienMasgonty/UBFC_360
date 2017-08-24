@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width= device-width, initial-scale= 1.0, shrink-to-fit= no, minimum-scale=1.0, user-scalable=no">
 	<title><?php wp_title("|",true,"right") ?><?php bloginfo('name'); ?></title>
 	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,800" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,500,900,900i" rel="stylesheet">
 	<link rel="icon" type="image/png" href="<?php echo get_stylesheet_directory_uri(); ?>/img/favicon.png" />
 	<?php wp_head(); ?>
 </head>
@@ -17,6 +17,7 @@
 				<span class="bar"></span>
 				<span class="bar"></span>
 			</div>
+			<span class="menu">Menu</span>
 			<div class="logo-nav">
 
 			</div>
@@ -45,7 +46,7 @@
 							<a class="titre" href="<?php echo esc_url(home_url()); ?>"><span class="txt">Accueil<i class="down ion-arrow-right-b"></i></span></a>
 						</div><!--
 						--><div class="block-nav ubfc dropdown">
-							<span class="titre"><span class="txt"><i class="left ion-arrow-left-b"></i>UBFC<i class="down ion-arrow-down-b"></i></span></span>
+							<span class="titre"><span class="txt"><i class="left ion-arrow-left-b"></i><strong>Bienvenue à UBFC</strong><i class="down ion-arrow-down-b"></i></span></span>
 						</div><!--
 						--><div class="block-nav recherche dropdown">
 							<span class="titre"><span class="txt"><i class="left ion-arrow-left-b"></i>Recherche & Formation<i class="down ion-arrow-down-b"></i></span></span>
@@ -59,8 +60,8 @@
 						--><div class="block-nav isite dropdown">
 							<span class="titre"><span class="txt"><i class="left ion-arrow-left-b"></i>ISITE-BFC<i class="down ion-arrow-down-b"></i></span></span>
 						</div><!--
-						--><div class="block-nav pepite">
-							<a class="titre" href="<?php echo get_permalink(get_page_by_title('Entrepreneuriat étudiant - PEPITE')); ?>"><span class="txt">Entrepreneuriat Étudiant<i class="down ion-arrow-right-b"></i></span></a>
+						--><div class="block-nav pepite dropdown">
+							<span class="titre"><span class="txt"><i class="left ion-arrow-left-b"></i>Entrepreneuriat Étudiant<i class="down ion-arrow-down-b"></i></span></span>
 						</div><!--
 						--><div class="block-nav etudiant dropdown">
 							<span class="titre"><span class="txt"><i class="left ion-arrow-left-b"></i>Vie Étudiante<i class="down ion-arrow-down-b"></i></span></span>
@@ -72,14 +73,17 @@
 							<span class="titre"><span class="txt"><i class="left ion-arrow-left-b"></i>HDR<i class="down ion-arrow-down-b"></i></span></span>
 						</div><!--
 						--><div class="block-nav services">
-								<?php 
-									$url = $_SERVER["REMOTE_ADDR"];
-									$url = explode('.', $url);
+							<?php
+								// test de l'appartenance au sous-réseau
+								// =================================================
+								$remote_ip = ip2long($_SERVER['REMOTE_ADDR']) ;
+								$mask = ip2long('255.255.255.192') ;
+								$network = ip2long('193.55.69.126') ;
 
-									if($url[0] == '193' && $url[1] == '55' && $url[2] == '69') {
-								 ?>
-									<a class="titre" href="<?php echo get_permalink(get_page_by_title('Services')); ?>"><span class="txt">Services<i class="down ion-arrow-right-b"></i></span></a>
-								<?php } ?>
+								if(($remote_ip & $mask) == ($network & $mask))
+								{ ?>
+									<a class="titre" href="<?php echo get_permalink(get_page_by_title('Outils numériques')); ?>"><span class="txt">Outils numériques<i class="down ion-arrow-right-b"></i></span></a>
+							<?php } ?>
 						</div>
 					</div>
 				</div>
@@ -106,6 +110,9 @@
 					</nav>
 					<nav id="isite" class="sub-nav">
 						<?php wp_nav_menu(array('menu' => 'isite', 'container' => false)); ?>
+					</nav>
+					<nav id="pepite" class="sub-nav">
+						<?php wp_nav_menu(array('menu' => 'pepite', 'container' => false)); ?>
 					</nav>
 				</div>
 			</div>

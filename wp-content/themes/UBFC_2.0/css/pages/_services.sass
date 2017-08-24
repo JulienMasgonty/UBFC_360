@@ -1,0 +1,49 @@
+.liste-services
+	text-align: center
+	padding-bottom: 50px
+
+	.elm 
+		width: calc(19% - 40px)
+		height: 290px
+		background: $white
+		display: inline-block
+		margin: 20px
+		padding: 15px
+		vertical-align: top
+	
+		.img-service 
+			width: 100%
+			height: 200px
+			background-size: contain
+			background-position: center center
+			background-repeat: no-repeat
+
+		.text
+			padding: 15px 0
+			text-align: center
+			font-weight: bold
+			color: $gray
+			+transition(150ms)
+
+
+
+		&:hover
+			box-shadow: 0 0 3px 0px #9e9e9e
+
+			.text
+				color: $blue
+
+@media screen and (max-width: 1199px)
+	.liste-services
+		.elm 
+			width: calc(32% - 40px)
+
+@media screen and (max-width: 991px)
+	.liste-services
+		.elm
+			width: calc(49% - 40px)
+
+@media screen and (max-width: 757px)
+	.liste-services
+		.elm
+			width: calc(100% - 40px)

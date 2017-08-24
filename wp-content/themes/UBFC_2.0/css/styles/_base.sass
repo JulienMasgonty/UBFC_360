@@ -8,10 +8,11 @@ html
 	font-size: 62.5% // font-size de 10px si la taille du navigateur n'a pas été modifiée. pratique pour utiliser les rem
 
 body 
-	font-size: 1.4rem
-	font-family: 'Open Sans', sans-serif
+	font-size: 1.6rem
+	font-family: 'Roboto', sans-serif
+	font-weight: 300 
 	color: darken($gray, 5%)
-	line-height: 24px
+	line-height: 28px
 	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAOElEQVQoU2P8////f0ZGRkYGPAAsSUgh3AR8ClGswaUQwy3YFGJ1MLpCnL5CVojX6zCFeBXBggcAcp0kBsFGkl8AAAAASUVORK5CYII=) repeat
 	background:
 		color: $lightgray
@@ -47,7 +48,8 @@ a
 		color: darken($green, 10%)
 
 h1, h2, h3, h4
-	font-family: "polly", sans-serif
+	font-family: "Roboto", sans-serif
+	font-weight: 900
 
 h1
 	line-height: 44px
@@ -57,6 +59,11 @@ h2:not(.block-title)
 	color: darken($gray, 5%)
 	position: relative
 	margin-bottom: 40px
+
+	&.ancre
+		padding-top: calc(#{$header-h} + 20px) // Corrige le scroll sur la nav en position fixed
+		margin-top: -#{$header-h} // Corrige le scroll sur la nav en position fixed
+		margin-bottom: 30px
 
 	&:after
 		content: ''
@@ -122,9 +129,34 @@ h2:not(.block-title)
 		display: inline-block
 		vertical-align: top
 
+		&.green
+			background:
+				color: $green
+
+		&.blue
+			background:
+				color: $blue
+
+		&.purple
+			background:
+				color: $purple
+
+		&.orange
+			background:
+				color: $orange
+
+		&.gray 
+			background:
+				color: $gray
+
+		&.lightblue 
+			background:
+				color: $lightblue
+
 		&.last 
 			&:last-of-type
 				display: none
 
 strong 
 	color: $graybold
+	font-weight: 500

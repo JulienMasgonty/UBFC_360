@@ -1,0 +1,62 @@
+.tnp
+	&.tnp-subscription
+		max-width: none
+
+		form 
+			.tnp-field
+				&.tnp-field-email
+					display: inline-block
+					/* padding: 10px */
+					border: none
+					width: 250px
+					margin: 5px
+					position: relative
+					border-bottom: 3px solid $purple
+					background-color: $white
+
+					.tnp-email
+						width: 200px
+						padding: 10px
+						margin: 0
+						height: auto
+						background: transparent
+
+				&.tnp-field-button
+					display: inline-block
+					border: none
+					width: 250px
+					margin: 5px
+					position: relative
+					color: $white
+					background-color: lighten($gray, 15%)
+					text-align: center
+					padding: 0
+					position: relative
+
+					&:after
+						content: ''
+						display: block
+						height: 2px
+						width: 100%
+						position: absolute
+						vertical-align: top
+						bottom: -2px
+						left: 0
+						+transition(100ms)
+						background:
+							color: $purple
+
+					&:hover
+						.tnp-submit
+							cursor: pointer
+
+						&:after 
+							height: 5px
+
+					.tnp-submit 
+						height: auto
+						background: transparent
+						text-align: center
+						margin: auto
+						width: 100%
+						position: relative

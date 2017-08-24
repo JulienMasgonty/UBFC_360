@@ -30,6 +30,22 @@ main
 
 		img 
 			margin: 20px 0
+			max-width: 100%
+			height: auto
+
+		.imp 
+			overflow: auto
+			padding: 30px 0
+
+			p:first-of-type 
+				margin: 20px
+				vertical-align: middle
+				display: inline-block
+
+			p:not(:first-of-type)
+				text-align: left !important
+				width: calc(100% - 150px)
+				display: inline-block
 
 		h2 
 			padding-left: 15px 
@@ -40,9 +56,9 @@ main
 			&:before
 				content: ''
 				width: 5px
-				height: calc(100% + 7px)
+				height: 40px
 				position: absolute
-				top: -3px
+				bottom: -3px
 				left: 0px 
 				background: $graybold
 				vertical-align: top
@@ -52,7 +68,39 @@ main
 
 		a 
 			color: $col-link
-			font-weight: bold
+			font-weight: 500
 
 			&:hover 
 				text-decoration: underline
+
+	.nav-content
+		&.active
+			position: fixed
+			width: 200px
+			transition: all ease 250ms
+
+		ul 
+			list-style: none
+
+			li 
+				padding: 10px 0
+
+			a 
+				font-weight: bold
+				color: $blue
+
+				&:hover
+					color: $blue
+					text-decoration: underline
+
+	.nav-content.active + .content 
+		margin-left: 200px
+
+	table
+		th
+			strong
+				color: $white
+
+		tr 
+			td 
+				padding: 15px
